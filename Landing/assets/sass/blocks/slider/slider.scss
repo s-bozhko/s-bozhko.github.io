@@ -1,0 +1,44 @@
+// /********************************************
+// 				SLIDER
+// ********************************************/
+
+.slider {
+	position: relative;
+	background-color: $bgtransparent;
+
+	text-align: center;
+
+	@media (min-width: $break_sm) {
+		height: 370px;
+	}
+
+	&__controls {
+		position: relative;
+		// top: -51%;
+		top: -134px;
+
+		i {
+			font-size: 36px;
+		}
+	}
+
+	&__prev {
+		position: absolute;
+		left: 0;
+		color: #fff;
+	}
+
+	&__next {
+		position: absolute;
+		right: 0;
+		color: #fff;
+	}
+
+	&__prev,
+	&__next {
+		&:hover {
+			color: $yellow;
+		}
+	}
+
+}

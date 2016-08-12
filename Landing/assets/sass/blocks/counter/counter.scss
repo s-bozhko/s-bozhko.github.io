@@ -1,0 +1,29 @@
+// /********************************************
+// 				COUNTER
+// ********************************************/
+
+.counter {
+	margin-bottom: 40px;
+	padding: 22px 22px 33px;
+	border: 1px solid #FFE600;
+	
+	text-align: center;
+
+	@media (min-width: $break_md) {
+		margin-bottom: 0;
+	}
+
+	&__number {
+		display: block;
+		color: #fff;
+		font-size: 40px;
+		font-weight: bold;
+		line-height: 62px;
+	}
+
+	&__text {
+		color: #FFE600;
+		font-size: 16px;
+		text-transform: uppercase;
+	}
+}

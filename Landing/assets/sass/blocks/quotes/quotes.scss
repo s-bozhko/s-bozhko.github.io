@@ -1,0 +1,41 @@
+// /********************************************
+// 				QUOTES
+// ********************************************/
+
+blockquote {
+	display: block;
+	position: relative;
+	
+	margin: 0 auto;
+	padding: 10px 15px;
+	border: none;
+	text-align: center;
+
+	@media (min-width: $break_sm) {
+		width: 80%;
+	}
+
+	@media (min-width: $break_md) {
+		width: 50%;
+	}
+}
+
+.quote {
+	margin-bottom: 12px;
+
+	&__text {
+		margin: 0;
+		font-size: 20px;
+		line-height: 25px;
+
+		&:before,
+		&:after {
+			content: "\"";
+		}
+	}
+
+	&__author {
+		font-size: 16px;
+		line-height: 22px;
+	}
+}

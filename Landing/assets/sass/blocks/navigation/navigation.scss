@@ -1,0 +1,53 @@
+// /********************************************
+// 				NAVIGAION
+// ********************************************/
+
+.navigation {
+
+	padding: 11px 0 7px;
+
+	&__item  {
+		display: inline-block;
+		margin-left: 12px;
+
+		&:first-child a:before {
+			content: none;
+		}
+	}
+
+	&__link {
+		display: inline-block;
+		padding: 11px 5px;
+
+		color: #fff;
+		font-size: 14px;
+		font-weight: $weight-bold;
+		text-transform: uppercase;
+
+		&:hover {
+			color: $yellow;
+			background-color: transparent;
+		}
+
+		@media (min-width: $break_sm) {
+			&:before {
+				content: "";
+				display: inline-block;
+				width: 5px;
+				height: 5px;
+				margin-top: 8px;
+				margin-right: 23px;
+				background-color: $yellow;
+				vertical-align: top;
+			}
+		}
+	}
+
+	&__item &__link {
+		&:hover {
+			background-color: transparent;
+		}
+	}
+}
+
+

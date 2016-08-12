@@ -1,0 +1,38 @@
+// /********************************************
+// 				CONTACTS
+// ********************************************/
+
+.adress {
+	padding-bottom: 60px;
+	text-align: center;
+
+	&__element {
+		margin-bottom: 40px;
+
+		@media (min-width: $break_sm) {
+			margin-bottom: 0;
+		}
+	}
+
+	&__icon {
+		color: $yellow;
+		font-size: 36px;
+	}
+
+	&__title {
+		margin: 20px 0 22px;
+		font-size: 20px;
+		line-height: 22px;
+		text-transform: uppercase;
+	}
+
+	&__description {
+		font-size: 20px;
+		line-height: 24px;
+	}
+}
+
+.contact-button {
+	margin-bottom: 73px;
+	text-align:center; 
+}

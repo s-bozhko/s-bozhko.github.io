@@ -1,0 +1,28 @@
+{
+  "name": "landing",
+  "version": "1.0.0",
+  "description": "Smak Landing Page",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/s-bozhko/s-bozhko.github.io.git"
+  },
+  "author": "Serhii Bozhko",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/s-bozhko/s-bozhko.github.io/issues"
+  },
+  "homepage": "https://github.com/s-bozhko/s-bozhko.github.io#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-browserify": "^0.5.1",
+    "gulp-concat": "^2.6.0",
+    "gulp-connect": "^5.0.0",
+    "gulp-livereload": "^3.8.1",
+    "gulp-sass": "^2.3.2",
+    "tiny-lr": "^0.2.1"
+  }
+}

@@ -1,0 +1,30 @@
+// /********************************************
+// 				 MAIN STYLES
+// ********************************************/
+
+@import 'vars';
+@import 'normalize';
+@import 'common';
+
+@import 'blocks/bx/bx';
+
+@import 'blocks/list/list';
+@import 'blocks/header/header';
+@import 'blocks/section/section';
+
+@import 'blocks/circle/circle';
+@import 'blocks/counter/counter';
+@import 'blocks/chart/chart';
+@import 'blocks/quotes/quotes';
+
+@import 'blocks/navigation/navigation';
+@import 'blocks/intro/intro';
+@import 'blocks/slider/slider';
+
+@import 'blocks/intro/intro';
+@import 'blocks/team/team';
+@import 'blocks/client/client';
+@import 'blocks/portfolio/portfolio';
+@import 'blocks/contacts/contacts';
+@import 'blocks/form/form';
+@import 'blocks/social/social';

@@ -1,0 +1,58 @@
+// /********************************************
+// 				CLIENT
+// ********************************************/
+.client {
+
+	&__slider {
+		padding: 54px 0 50px;
+		text-align: center;
+	}
+
+	&__list {
+		position: relative;
+		padding: 6px 0 0;
+	}
+
+	&__item {
+		display: inline-block;
+		position: relative;
+		width: 180px;
+		margin-right: 18px;
+		vertical-align: top;
+
+		&:last-child {
+			margin-right: 0;
+		}
+	}
+
+	&__nav {
+		text-align: center;
+		margin-bottom: 55px;
+
+		 > li {
+			display: inline-block;
+			margin-left: 28px;
+			text-align: center;
+			padding: 0;
+
+			&:first-child {
+				margin-left: 0;
+			}
+
+			 > a {
+				color: #fff;
+				background: #ffe600;
+				color: #fff;
+				vertical-align: middle;
+				width: 31px;
+				height: 31px;
+				display: block;
+				font-size: 18px;
+
+				&.fa {
+					line-height: 31px;
+				}
+			}
+		}
+	}
+}

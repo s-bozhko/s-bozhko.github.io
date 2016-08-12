@@ -1,0 +1,35 @@
+// /********************************************
+// 				CHART
+// ********************************************/
+
+.chart {
+	margin-bottom: 40px;
+
+	text-align: center;
+
+	@media (min-width: $break_sm) {
+		margin-bottom: 0;
+	}
+
+	&__skill {
+		height: 142px;
+		width: 142px;
+		margin: 2px auto 0;
+		border: 4px solid $yellow;
+		border-radius: 50%;
+		line-height: 136px;
+	}
+
+	&__percent {
+		font-size: 36px;
+		font-weight: $weight-light;
+		vertical-align: middle;
+	}
+
+	&__text {
+		margin: 25px 0 0;
+		font-size: 18px;
+		color: $yellow;
+		text-transform: uppercase;
+	}
+}

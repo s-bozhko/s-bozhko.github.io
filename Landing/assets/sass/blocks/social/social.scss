@@ -1,0 +1,49 @@
+// /********************************************
+// 				SOCIAL
+// ********************************************/
+
+.social {
+
+	&__list {
+		padding: 0;
+
+		&_footer {
+			padding: 8px 0;
+		}
+	}
+
+	&__item {
+		display: inline-block;
+		margin-right: 2px;
+
+		&_bio {
+			margin-right: 21px;
+		}
+	}
+
+	&__link {
+		display: inline-block;
+		width: 37px;
+		height: 37px;
+		
+		color: #fff;
+
+		line-height: 35px;
+		text-align: center;
+
+		&_bordered {
+			border: 1px solid #fff;
+		}
+
+		&:hover{
+			color: #ffe600;
+			border-color: $yellow;
+		}
+	}
+
+	&__icon {
+		font-size: 16px;
+		font-size: 18px;
+		vertical-align: middle;
+	}	
+}

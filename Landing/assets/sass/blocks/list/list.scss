@@ -1,0 +1,42 @@
+// /********************************************
+// 				LIST
+// ********************************************/
+
+.list {
+	margin: 0;
+	padding: 10px 0 7px;
+	list-style-type: none;
+
+	&__item  {
+		display: inline-block;
+		margin-left: 10px;
+
+		&:first-child a:before {
+			content: none;
+		}
+	}
+
+	&__link {
+		display: inline-block;
+		padding: 11px 5px;
+
+		color: #000;
+		font-size: 16px;
+		text-transform: uppercase;
+
+		&:hover {
+			color: $yellow;
+		}
+
+		&:before {
+			content: "";
+			display: inline-block;
+			width: 5px;
+			height: 5px;
+			margin-top: 8px;
+			margin-right: 22px;
+			background-color: $yellow;
+			vertical-align: top;
+		}
+	}
+}
