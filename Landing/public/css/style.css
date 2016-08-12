@@ -893,28 +893,6 @@ blockquote {
   .slider__prev:hover, .slider__next:hover {
     color: #ffe600; }
 
-.intro {
-  width: 100%;
-  padding: 100px 0;
-  background: url("../img/bg.jpg") center center no-repeat;
-  background-size: cover; }
-  @media (min-width: 768px) {
-    .intro {
-      height: 1050px;
-      padding: 390px 0; } }
-  .intro__title {
-    width: 80%;
-    margin: 0 auto 10px;
-    font-size: 48px;
-    line-height: 78px;
-    font-weight: 700;
-    text-transform: uppercase;
-    text-align: center;
-    color: #fff; }
-    @media (min-width: 992px) {
-      .intro__title {
-        font-size: 64px; } }
-
 .team {
   position: relative;
   text-align: center;
