@@ -10,6 +10,8 @@
 
 	background-color: $bgtransparent;
 
+	transition: all 0.5s;
+
 	@media (min-width: $break_sm) {
 		padding: 15px 0 24px;
 	}
@@ -20,6 +22,8 @@
 		@media (min-width: $break_sm) {
 			padding: 3px 0 8px;
 		}
+
+		// transition: all 0.5s ease-out 0.5s;
 	}
 
 	&__logo {
