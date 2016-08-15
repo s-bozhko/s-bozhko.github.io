@@ -184,6 +184,8 @@ function setTransformProperty(element, property) {
 }
 // -------------------------
 
+
+
 window.onload = function () {
 
     changeHeaderClass();
@@ -208,4 +210,111 @@ window.onload = function () {
     window.addEventListener("scroll", drawSkillDiagrams);
     // прорисовка статистических чисел
     window.addEventListener("scroll", drawNumbers);
+
+
+    // фильтр категорий изображений
+    var portfolioCategory = document.getElementsByClassName('portfolio-category');
+
+    for (var i = 0; i < portfolioCategory.length; i++) {
+        portfolioCategory[i].addEventListener('click', showCategory);
+    }
+
+    function showCategory(e) {
+        var target = e.target;
+        if (target.tagName != 'A') return;
+
+        e.preventDefault();
+
+        for (var i = 0; i < portfolioCategory.length; i++) {
+            portfolioCategory[i].classList.remove('link_active');
+        }
+
+        target.classList.add('link_active');
+
+        var portfolio = document.getElementsByClassName('portfolio__list')[0];
+
+        for (var i = 0; i < portfolio.children.length; i++) {
+            var portfolioItem = portfolio.children[i];
+            var currentCategory = portfolioItem.getAttribute('data-category');
+
+            if (target.getAttribute('data-category') == 'all') {
+                portfolioItem.style.display = '';
+                continue;
+            }
+
+            if (currentCategory != target.getAttribute('data-category')) {
+                portfolioItem.style.display = 'none';
+            } else {
+                portfolioItem.style.display = '';
+            }
+        }
+    }
+    // -------------------------
+
+
+    // валидация формы
+    var form = document.querySelector('.contact-form');
+    var inputName = form.querySelector('input[name="name"]');
+    var inputMail = form.querySelector('input[name="mail"]');
+    var inputSubject = form.querySelector('input[name="subject"]');
+
+    form.addEventListener('submit', checkSubmit);
+    inputName.addEventListener('input', checkName);
+    inputMail.addEventListener('input', checkMail);
+    inputSubject.addEventListener('input', checkSubject);
+    
+    function checkSubmit(e) {
+        if (this.querySelector('.warning')) e.preventDefault();
+    };
+
+    function checkName (e) {
+        var regexp = /[^a-zA-z]/;
+        var message = 'Разрешены только английские символы';
+        checkInput(e, regexp, message);
+    };
+
+    function checkMail (e) {
+        var regexp = /[^a-zA-z0-9_@]/;
+        var message = 'Разрешены только английские символы, цифры, знаки _ и @';
+        checkInput(e, regexp, message);
+    };
+
+    function checkSubject (e) {
+        var regexp = /[^a-zA-z0-9]/;
+        var message = 'Разрешены только английские символы и цифры';
+        checkInput(e, regexp, message);
+    };
+
+    function checkInput(e, regexp, message) {
+        hideWarning(e);
+        var target = e.target;
+        if (~target.value.search(regexp)) {
+            showWarning(e, message);
+        }
+    };
+
+    function showWarning(e, message) {
+        var target = e.target;
+        var parent = target.parentElement;
+        parent.style.position = "relative";
+
+        if (target.parentElement.querySelector('.for-' + target.getAttribute('name'))) return;
+
+        var newWarning = document.createElement('span');
+        newWarning.className = 'warning for-' + target.getAttribute('name');
+        newWarning.innerHTML = message;
+        newWarning.style.position = 'relative';
+        newWarning.style.top = 12 + 'px';
+        parent.appendChild(newWarning);
+    }
+
+    function hideWarning(e) {
+        var target = e.target;
+        var attr = target.getAttribute('name');
+        var needToRemove = target.parentElement.querySelector('.for-'+ attr);
+        if (!needToRemove) return;
+        needToRemove.remove();
+    }
+
+
 }
