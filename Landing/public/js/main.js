@@ -315,6 +315,72 @@ window.onload = function () {
         if (!needToRemove) return;
         needToRemove.remove();
     }
+    // -------------------------
 
+
+    // слайдер для блока "Quotes"
+    var quotesSlides = document.querySelectorAll('#testimonials .quotes__slide');
+    var quotesSlider = document.querySelector('.quotes__slider');
+
+    var quotesWidth = 0;
+    var transformOffset = [];
+
+    for (var i = 0; i < quotesSlides.length; i++) {
+        transformOffset.push(quotesWidth);
+        quotesWidth += parseFloat(getComputedStyle(quotesSlides[i]).width);
+        quotesSlides[i].style.width = parseFloat(getComputedStyle(quotesSlides[i]).width) + 'px';
+    }
+
+    quotesSlider.style.width = quotesWidth + 'px';
+
+    
+    var quotesControls = document.querySelectorAll('.bx-pager-link');
+
+    for (var i = 0; i < quotesControls.length; i++) {
+        quotesControls[i].addEventListener('click', nextSlide);
+    }
+
+
+    var currentSlide = 0;
+    var slideTime = 3000;
+
+    var slideInterval = setInterval(nextSlide, slideTime);
+
+    nextSlide();
+
+    function nextSlide(e) {
+
+        var index = currentSlide;
+
+         for (var i = 0; i < quotesControls.length; i++) {
+            quotesControls[i].className = 'bx-pager-link';
+        }
+
+        if (e) {
+            e.preventDefault();
+            index = +e.target.dataset.slideIndex;
+
+            e.target.classList.add('active');
+
+            clearInterval(slideInterval);
+
+            setTimeout(function() {
+              slideInterval = setInterval(nextSlide, slideTime);
+            }, 2000);
+        }
+
+        currentSlide = index;
+
+        quotesSlides[currentSlide].className = 'quotes__slide';
+
+        quotesControls[currentSlide].classList.add('active');
+        
+        quotesSlider.style.transform = 'translate3d(-' + transformOffset[currentSlide] + 'px, 0px, 0px)';
+        
+        currentSlide = (currentSlide + 1) % quotesSlides.length;
+
+        quotesSlides[currentSlide].className = 'quotes__slide quotes__slide_active';
+    }
+    // -------------------------
 
 }

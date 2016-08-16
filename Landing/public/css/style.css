@@ -819,6 +819,19 @@ blockquote {
     font-size: 16px;
     line-height: 22px; }
 
+.quotes__slider {
+  position: relative;
+  -webkit-transition: transform 1s;
+  -moz-transition: transform 1s;
+  -o-transition: transform 1s;
+  transition: transform 1s; }
+
+.quotes__slide {
+  float: left; }
+
+.slider__wrapper {
+  overflow: hidden; }
+
 .navigation {
   padding: 11px 0 7px; }
   .navigation__item {

@@ -39,3 +39,29 @@ blockquote {
 		line-height: 22px;
 	}
 }
+
+.quotes {
+	&__slider {
+		position: relative;
+
+		-webkit-transition: transform 1s;
+	    -moz-transition: transform 1s;
+	    -o-transition: transform 1s;
+	    transition: transform 1s;
+	}
+
+	&__slide {
+		float: left;
+
+	    &_active {
+
+		}
+	}
+}
+
+
+.slider {
+	&__wrapper {
+		overflow: hidden;
+	}
+}
