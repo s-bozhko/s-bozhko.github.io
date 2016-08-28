@@ -1,0 +1,64 @@
+// /********************************************
+// 				TEAM
+// ********************************************/
+
+.team {
+
+	padding-bottom: 120px;
+	text-align: center;
+
+	&__list {
+		padding: 3px 0 0;
+	}
+
+	&__member {
+		position: relative;
+		display: block;
+		// margin-bottom: 40px;
+		// border-bottom: 2px solid $gray;
+		background-color: #fff;
+
+		img {
+			margin: 0 auto;
+		}
+
+		@media (min-width: $break_md) {
+			// margin-bottom: 20px;
+		}
+	}
+
+	&__image-container {
+		height: 139px;
+		background-color: #252726;
+	}
+
+	&__info {
+		background-color: #1c1d1e;
+		padding: 0 0 11px;
+	}
+
+	&__name {
+		display: block;
+		color: $primary-color;
+		font-size: 20px;
+		font-weight: $weight-medium;
+		line-height: 30px;
+	}
+
+	&__title {
+		color: #fff;
+		font-size: 13px;
+		font-weight: $weight-medium;
+	}
+
+	&__text {
+		margin: 0;
+		padding: 32px 20px 24px;
+		background-color: #f7f7f7;
+		color: $text-color;
+
+		font-size: 13px;
+		font-weight: $weight-light;
+		line-height: 16px;
+	}
+}

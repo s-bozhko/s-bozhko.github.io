@@ -1,0 +1,71 @@
+// /********************************************
+// 				CONTACT FORM
+// ********************************************/
+.contact {
+	padding-bottom: 91px;
+}
+
+.form {
+	
+	&__wrapper {
+		//margin-bottom: 13px;
+
+		&:after {
+		    content: "";
+		    display: block;
+		    height: 10px;
+		    border: 2px solid #Fff;
+		    position: relative;
+		    bottom: 6px;
+		    left: -3px;
+		    margin-right: -6px;
+		    border-top: 0;
+		}
+	}
+
+	&__input {
+		padding: 18px 28px 11px;
+		font-weight: $weight-light;
+	}
+
+
+	&__input {
+		width: 100%;
+		border: 0;
+		background-color: transparent;
+		color: #fff;
+		border-radius: 0;
+
+		-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+	    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+	    -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+	    -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+	    transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+
+	    &:-ms-input-placeholder      {color:#fff;}
+		&::-webkit-input-placeholder {color:#fff;}
+		&:-moz-placeholder           {color:#fff;}/* Firefox 18- */
+		&::-moz-placeholder          {color:#fff;}/* Firefox 19+ */
+		
+		&:focus {
+		    border-color: #66afe9;
+		    outline: 0;
+		    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, .6);
+		    box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, .6);
+		}
+	}
+
+	&__message {
+		margin-top: 71px;
+	}
+
+	&__commands {
+		margin-top: 30px;
+		text-align: right;
+	}
+
+	&__submit {
+		padding: 13px 36px 15px;
+		text-transform: none;
+	}
+}

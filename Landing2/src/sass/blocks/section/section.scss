@@ -20,16 +20,16 @@
 			}
 
 			&_about {
-				margin-bottom: 92px;
-				padding-top: 50px;
+				margin-bottom: 83px;
+				padding-top: 43px;
 			}
 
-			&_clients {
-				margin: 48px 0 30px;
+			&_news {
+				margin: 38px 0 30px;
 			}
 
 			&_contact  {
-				margin: 57px 0 60px;
+				margin: 80px 0 69px;
 			}
 
 			&_form {
@@ -78,5 +78,9 @@
 		font-size: 13px;
 		font-weight: $weight-light;
 		line-height: 16px;
+
+		&_white {
+			color: #fff;
+		}
 	}
 }

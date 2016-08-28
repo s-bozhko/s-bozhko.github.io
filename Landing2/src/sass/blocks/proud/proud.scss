@@ -1,0 +1,26 @@
+// /********************************************
+// 				PROUD NUMBERS
+// ********************************************/
+
+.proud-numbers {
+	padding-top: 72px;
+	padding-bottom: 80px;
+
+	color: #fff;
+	text-align: center;
+
+	&__number {
+		margin-top: 31px;
+		margin-bottom: 19px;
+
+		font-size: 40px;
+		font-weight: $weight-light;
+	}
+
+	&__title {
+		margin: 0;
+		font-size: 13px;
+		font-weight: $weight-medium;
+		text-transform: uppercase;
+	}
+}

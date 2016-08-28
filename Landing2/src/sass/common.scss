@@ -48,6 +48,10 @@ body {
 	color: #fff;
 }
 
+.dark {
+	background-color: $section-dark-bg;
+}
+
 .fa-52px {
     font-size: 52px;
 }
@@ -192,9 +196,9 @@ body {
 
 .row {
 
-	&_about {
-		margin-bottom: 5px;
-	}
+	// &_about {
+	// 	margin-bottom: 5px;
+	// }
 }
 
 .navbar-nav > li > a {
@@ -261,7 +265,11 @@ body {
 }
 
 .form-control {
-    height: 59px;
+    height: 57px;
+}
+
+.form-group {
+	margin: 0;
 }
 
 

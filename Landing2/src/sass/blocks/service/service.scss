@@ -40,7 +40,7 @@
 		margin-top: -2px;
 		padding: 44px 40px 40px 75px;
 		border-top: 2px solid $primary-color;
-		
+		color: $text-color;
 		font-size: 15px;
 		line-height: 18px;
 		font-weight: $weight-light;
@@ -72,6 +72,10 @@
 		&:hover {
 			background-color: transparent;
 			color: $secondary-color;
+			border: 1px solid $primary-color;
+		}
+
+		&_selected {
 			border: 1px solid $primary-color;
 		}
 	}

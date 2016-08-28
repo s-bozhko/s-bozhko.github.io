@@ -12,7 +12,7 @@
 		margin: 83px 0 0;
 		padding: 0;
 
-		height: 493px;
+		height: 494px;
 	}
 
 	&__item {
@@ -58,6 +58,8 @@
 .portfolio-category {
 	padding: 16px 26px 14px;
 	font-size: 13px;
+
+	color: $secondary-color;
 
 	&_selected {
 		border: 1px solid $primary-color;

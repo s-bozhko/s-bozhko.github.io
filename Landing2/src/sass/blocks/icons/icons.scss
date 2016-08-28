@@ -29,3 +29,30 @@
 	}
 
 }
+
+.icon-proud {
+	display: inline-block;
+
+	&:before {
+		display: inline-block;
+		content: "";
+		height: 70px;
+		width: 66px;
+	}
+	
+	&_case:before {
+		background: transparent url('../img/icon-case.png') -1px 12px no-repeat;
+	}
+
+	&_mouse:before {
+		background: transparent url('../img/icon-mouse.png') 16px 0 no-repeat;
+	}
+
+	&_letter:before {
+		background: transparent url('../img/icon-letter.png') 2px 8px no-repeat;
+	}
+
+	&_dialog:before {
+		background: transparent url('../img/icon-dialog.png') -1px 13px no-repeat;
+	}
+}
