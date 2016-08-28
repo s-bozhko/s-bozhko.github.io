@@ -1,0 +1,82 @@
+// /********************************************
+// 				SECTION
+// ********************************************/
+
+.section {
+	&__heading {
+		margin: 35px 0;
+		text-align: center;
+		position: relative;
+
+		@media (min-width: $break_sm) {
+			margin: 56px 0;
+		
+			&_portfolio {
+				margin: 60px 0 65px;
+			}
+
+			&_portfolio-like {
+				margin: 58px 0 30px;
+			}
+
+			&_about {
+				margin-bottom: 92px;
+				padding-top: 50px;
+			}
+
+			&_clients {
+				margin: 48px 0 30px;
+			}
+
+			&_contact  {
+				margin: 57px 0 60px;
+			}
+
+			&_form {
+				margin: 58px 0 59px;
+			} 
+		}
+	}
+
+	&__title {
+		margin: 14px 0 0;
+		font-size: 40px;
+		line-height: 48px;
+		// text-transform: uppercase;
+		color: $secondary-color;
+
+		&_white {
+			color: #fff;
+		}
+
+		&_primary-color {
+			color: $yellow;
+		}
+	}
+
+	&__subtitle {
+		font-size: 17px;
+		text-transform: uppercase;
+		font-weight: normal;
+		color: #707070;
+	}
+
+	&__list {
+		color: #000;
+		font-size: 0;
+		text-align: center;
+	}
+
+	&_branded {
+		padding-bottom: 10px;
+	}
+
+	&__description {
+		margin: 21px auto 3px;
+		color: $title-color;
+
+		font-size: 13px;
+		font-weight: $weight-light;
+		line-height: 16px;
+	}
+}

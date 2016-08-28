@@ -1,6 +1,50 @@
 /* header */
 
 .header {
-	height: 50px;
-	background-color: red;
+	//position: fixed;
+	width: 100%;
+	margin: 0;
+	padding: 5px 0 10px;
+	z-index: 10;
+
+	border-radius: 0;
+
+	background-color: $bgtransparent;
+
+	transition: all 0.5s;
+
+	@media (min-width: $break_sm) {
+		padding: 0;
+	}
+
+	&_scrolled {
+		background: rgba(19, 19, 22, 0.8);
+		
+		@media (min-width: $break_sm) {
+			padding: 3px 0 8px;
+		}
+	}
+
+	&__logo {
+		float: left;
+		margin-top: 34px;
+		margin-left: 22px;
+		
+		img {
+			//height: 40px;
+
+			@media (min-width: $break_sm) {
+				height: auto;
+			}
+		}
+		
+	}
+
+	&__navigation {
+		padding: 0;
+
+		@media (min-width: $break_sm) {
+			float: right;
+		}
+	}
 }

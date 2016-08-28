@@ -1,7 +1,19 @@
-/* MAIN STYLE */
+// /********************************************
+// 				 MAIN STYLES
+// ********************************************/
 
 @import 'vars';
+@import 'normalize';
 @import 'common';
 
-@import 'blocks/header/header';
 
+@import 'blocks/header/header';
+@import 'blocks/section/section';
+
+@import 'blocks/navigation/navigation';
+@import 'blocks/intro/intro';
+
+@import 'blocks/icons/icons';
+
+@import 'blocks/service/service';
+@import 'blocks/portfolio/portfolio';

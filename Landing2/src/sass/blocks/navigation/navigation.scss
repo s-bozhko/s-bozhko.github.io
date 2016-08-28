@@ -1,0 +1,50 @@
+// /********************************************
+// 				NAVIGAION
+// ********************************************/
+
+.navigation {
+
+	padding: 0;
+
+	&__item  {
+		display: inline-block;
+		margin-left: 28px;
+
+		text-align: center;
+
+		&:first-child {
+			margin-left: 0;
+		}
+	}
+
+	&__link {
+		display: inline-block;
+		min-width: 70px;
+		padding: 11px 5px;
+
+		color: $secondary-color;
+		font-size: 14px;
+		font-weight: $weight-light;
+		line-height: 18px;
+		text-transform: uppercase;
+
+		&:hover,
+		&_active {
+			color: $primary-color;
+			border-bottom: 2px solid $primary-color;
+		}
+
+		.navigation & {
+			padding: 38px 0px 40px;
+		}
+
+	}
+
+	&__item &__link {
+		&:hover {
+			background-color: transparent;
+		}
+	}
+}
+
+

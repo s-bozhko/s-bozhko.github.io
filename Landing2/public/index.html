@@ -7,8 +7,9 @@
         <title>Landing Template 2</title>
 
 
-        <link href='https://fonts.googleapis.com/css?family=Oswald:400,300,700' rel='stylesheet' type='text/css'>
+        <link href="https://fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,700,800" rel="stylesheet">
         <link rel="stylesheet" href="css/bootstrap.css">
+        <link rel="stylesheet" href="css/font-awesome.css">
         <link rel="stylesheet" href="css/style.css">
 
         <!--[if lte IE 9]>
@@ -16,16 +17,261 @@
             <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
         <![endif]-->
     </head>
-    <body>
-        <div class="wrapper">
-            <div class="page-wrapper">
-                <header class="header">
-                	
-                </header>
+    <body>  
+        <div class="header-wrapper">
+            <header class="header" id="top"> 
+                <div class="container"> 
+                    <div class="header__logo">
+                        <a href="#">
+                            <img src="img/logo.png" alt="Smak">
+                        </a>
+                    </div>
+                    <div class="navbar-header"> 
+                        <button aria-controls="bs-navbar" aria-expanded="false" class="collapsed navbar-toggle" data-target="#bs-navbar" data-toggle="collapse" type="button"> 
+                            <span class="sr-only">Toggle navigation</span> 
+                            <span class="icon-bar"></span> 
+                            <span class="icon-bar"></span> 
+                            <span class="icon-bar"></span> 
+                        </button>
+                    </div> 
+                    <nav class="collapse navbar-collapse header__navigation clearfix" id="bs-navbar"> 
+                        <ul class="nav navbar-nav navigation list"> 
+                            <li class="navigation__item"><a href="#" class="navigation__link link navigation__link_active">Home</a></li>
+                            <li class="navigation__item"><a href="#services" class="navigation__link link">Services</a></li>
+                            <li class="navigation__item"><a href="#portfolio" class="navigation__link link">Portfolio</a></li>
+                            <li class="navigation__item"><a href="#about" class="navigation__link link">About</a></li>
+                            <li class="navigation__item"><a href="#news" class="navigation__link link">News</a></li>
+                            <li class="navigation__item"><a href="#contacts" class="navigation__link link">Contact</a></li>
+                        </ul>
+                    </nav> 
+                </div> 
+            </header>
+        </div>
+
+        <section class="intro">
+             <div class="container">
+                <div class="intro__container">
+                    <p class="intro__title lead">We make websites</p>
+                    <a href="#" class="btn btn-primary intro__button">Start tour</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="services">
+            <div class="container service">
+                <div class="row">
+                    <div class="col-sm-3">
+                        <div class="service__item service__item_selected">
+                            <div class="service__icon"><i class="icon icon_desktop"></i></div>
+                            <h3 class="service__title">Web design</h3>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="service__item">
+                            <div class="service__icon"><i class="icon icon_pencil"></i></div>
+                            <h3 class="service__title">Graphic design</h3>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="service__item">
+                            <div class="service__icon"><i class="icon icon_gear"></i></div>
+                            <h3 class="service__title">Programming</h3>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="service__item">
+                            <div class="service__icon"><i class="icon icon_camera"></i></div>
+                            <h3 class="service__title">Photography</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-10 col-sm-push-1">
+                        <div class="service__text">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute i rure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                        </div>
+                    </div>
+                </div>
             </div>
 
-            <footer class="footer">
-            </footer>
-        </div>
+            <div class="service-description gray" style="min-height: 700px;">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-10 col-sm-push-1">
+                            <div class="btn-group service-description__btn-group clearfix" role="group" aria-label="...">
+                                <button type="button" class="btn service-description__btn">Start tour</button>
+                                <button type="button" class="btn service-description__btn">For all devices</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-6 service-description__image">
+                            <div class="row">
+                                <div class="col-sm-10 col-sm-push-2">
+                                    <img src="img/phones.png" alt="Phones">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <h3 class="service-description__title">Fully Responsive</h3>
+                            <p class="service-description__text">Eum cu tantas legere complectitur, hinc utamur ea eam. Lorem ipsum dolor sit amet, volumus temporibus definitionem id ius, vel ut magna timeam appareat, movet timeam maiorum an ius. <br> Sea libris dictas lucilius et. Ne cibo urbanitas pri, qui ad populo accusamus. Quod congue ea ius, nisl aperiri sit ut.</p>
+                            <a href="#" class="btn btn-primary service-description__button">Get now</a>
+                        </div>  
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+        <section id="portfolio">
+            <div class="container">
+                <div class="portfolio">
+                    <div class="section__heading section__heading_portfolio">
+                        <h1 class="section__title">Our Portfolio</h1>
+                        <div class="divider"><span></span></div>
+                        <div class="row">
+                            <div class="col-sm-8 col-sm-push-2">
+                                <p class="section__description description">Eum cu tantas legere complectitur, hinc utamur ea eam. Eum patrioque mnesarchum eu, diam erant convenire et vis. Et essent evertitur sea, vis cu ubique referrentur, sed eu dicant expetendis.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <ul class="section__list list clearfix">
+                                <li class="list__item"><a href="#" class="portfolio-category list__link link portfolio-category_selected" data-category="all">All</a></li>
+                                <li class="list__item"><a href="#" class=" portfolio-category list__link link" data-category="web-design">Web</a></li>
+                                <li class="list__item"><a href="#" class=" portfolio-category list__link link" data-category="photography">Photography</a></li>
+                                <li class="list__item"><a href="#" class=" portfolio-category list__link link" data-category="graphic-design">Graphic Design</a></li>
+                                <!-- <li class="list__item"><a href="#" class=" portfolio-category list__link link" data-category="illustration">Illustration</a></li> -->
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="container-fluid">
+                        <div class="row">
+                            <ul class="portfolio__list clearfix" id="portfolioGrid">
+                                <li class="portfolio__item col-xs-6 col-sm-4 col-md-3 col-lg-2" data-category="graphic-design">
+                                    <a href="#" class="portfolio__link">
+                                        <img src="img/photo_1.jpg" class="img-responsive" alt="">
+                                        <div class="portfolio__description">
+                                            <h4 class="portfolio__title">Sample Image</h4>
+                                            <p class="portfolio__type">Graphic Design</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="portfolio__item col-xs-6 col-sm-4 col-md-3 col-lg-2" data-category="web-design">
+                                    <a href="#" class="portfolio__link">
+                                        <img src="img/photo_2.jpg" class="img-responsive" alt="">
+                                        <div class="portfolio__description">
+                                            <h4 class="portfolio__title">Sample Image</h4>
+                                            <p class="portfolio__type">Web Design</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="portfolio__item col-xs-6 col-sm-4 col-md-3 col-lg-2" data-category="photography">
+                                    <a href="#" class="portfolio__link">
+                                        <img src="img/photo_1.jpg" class="img-responsive" alt="">
+                                        <div class="portfolio__description">
+                                            <h4 class="portfolio__title">Sample Image</h4>
+                                            <p class="portfolio__type">Photography</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="portfolio__item col-xs-6 col-sm-4 col-md-3 col-lg-2" data-category="illustration">
+                                    <a href="#" class="portfolio__link">
+                                        <img src="img/photo_2.jpg" class="img-responsive" alt="">
+                                        <div class="portfolio__description">
+                                            <h4 class="portfolio__title">Sample Image</h4>
+                                            <p class="portfolio__type">Illustration</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="portfolio__item col-xs-6 col-sm-4 col-md-3 col-lg-2" data-category="graphic-design">
+                                    <a href="#" class="portfolio__link">
+                                        <img src="img/photo_1.jpg" class="img-responsive" alt="">
+                                        <div class="portfolio__description">
+                                            <h4 class="portfolio__title">Sample Image</h4>
+                                            <p class="portfolio__type">Graphic Design</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="portfolio__item col-xs-6 col-sm-4 col-md-3 col-lg-2" data-category="web-design">
+                                    <a href="#" class="portfolio__link">
+                                        <img src="img/photo_2.jpg" class="img-responsive" alt="">
+                                        <div class="portfolio__description">
+                                            <h4 class="portfolio__title">Sample Image</h4>
+                                            <p class="portfolio__type">Web Design</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="portfolio__item col-xs-6 col-sm-4 col-md-3 col-lg-2" data-category="photography">
+                                    <a href="#" class="portfolio__link">
+                                        <img src="img/photo_2.jpg" class="img-responsive" alt="">
+                                        <div class="portfolio__description">
+                                            <h4 class="portfolio__title">Sample Image</h4>
+                                            <p class="portfolio__type">Photography</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="portfolio__item col-xs-6 col-sm-4 col-md-3 col-lg-2" data-category="illustration">
+                                    <a href="#" class="portfolio__link">
+                                        <img src="img/photo_1.jpg" class="img-responsive" alt="">
+                                        <div class="portfolio__description">
+                                            <h4 class="portfolio__title">Sample Image</h4>
+                                            <p class="portfolio__type">Illustration</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="portfolio__item col-xs-6 col-sm-4 col-md-3 col-lg-2" data-category="graphic-design">
+                                    <a href="#" class="portfolio__link">
+                                        <img src="img/photo_2.jpg" class="img-responsive" alt="">
+                                        <div class="portfolio__description">
+                                            <h4 class="portfolio__title">Sample Image</h4>
+                                            <p class="portfolio__type">Graphic Design</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="portfolio__item col-xs-6 col-sm-4 col-md-3 col-lg-2" data-category="web-design">
+                                    <a href="#" class="portfolio__link">
+                                        <img src="img/photo_1.jpg" class="img-responsive" alt="">
+                                        <div class="portfolio__description">
+                                            <h4 class="portfolio__title">Sample Image</h4>
+                                            <p class="portfolio__type">Web Design</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="portfolio__item col-xs-6 col-sm-4 col-md-3 col-lg-2" data-category="photography">
+                                    <a href="#" class="portfolio__link">
+                                        <img src="img/photo_2.jpg" class="img-responsive" alt="">
+                                        <div class="portfolio__description">
+                                            <h4 class="portfolio__title">Sample Image</h4>
+                                            <p class="portfolio__type">Photography</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="portfolio__item col-xs-6 col-sm-4 col-md-3 col-lg-2" data-category="illustration">
+                                    <a href="#" class="portfolio__link">
+                                        <img src="img/photo_1.jpg" class="img-responsive" alt="">
+                                        <div class="portfolio__description">
+                                            <h4 class="portfolio__title">Sample Image</h4>
+                                            <p class="portfolio__type">Illustration</p>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+            
+
+            <!-- <footer class="footer">
+            </footer> -->
+
+        <br><br><br><br><br><br><br><br><br><br><br><br><br>
 	</body>
 </html>

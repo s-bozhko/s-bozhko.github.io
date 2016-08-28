@@ -1,0 +1,31 @@
+// /********************************************
+// 				ICONS
+// ********************************************/
+
+.icon {
+	display: inline-block;
+
+	&:before {
+		display: inline-block;
+		content: "";
+		height: 64px;
+		width: 64px;
+	}
+	
+	&_desktop:before {
+		background: transparent url('../img/icon-desktop.png') 3px 6px no-repeat;
+	}
+
+	&_pencil:before {
+		background: transparent url('../img/icon-pencil.png') 8px 4px no-repeat;
+	}
+
+	&_gear:before {
+		background: transparent url('../img/icon-gear.png') 1px 0 no-repeat;
+	}
+
+	&_camera:before {
+		background: transparent url('../img/icon-camera.png') 2px 5px no-repeat;
+	}
+
+}
