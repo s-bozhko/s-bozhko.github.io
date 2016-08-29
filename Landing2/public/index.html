@@ -18,8 +18,8 @@
         <![endif]-->
     </head>
     <body>  
-        <div class="header-wrapper">
-            <header class="header" id="top"> 
+        <header class="header" id="top">
+            <div class="header__wrapper">
                 <div class="container"> 
                     <div class="header__logo">
                         <a href="#">
@@ -44,12 +44,12 @@
                             <li class="navigation__item"><a href="#contacts" class="navigation__link link">Contact</a></li>
                         </ul>
                     </nav> 
-                </div> 
-            </header>
-        </div>
+                </div>
+            </div>
+        </header>
 
         <section class="intro">
-             <div class="container">
+            <div class="container">
                 <div class="intro__container">
                     <p class="intro__title lead">We make websites</p>
                     <a href="#" class="btn btn-primary intro__button">Start tour</a>
@@ -578,12 +578,17 @@
                     </div>
                 </div>
             </div>
+            <div class="map" style="height: 400px; background-color: #252726;">
+                <div class="map-tooltip">
+                    <p class="map-tooltip__text">Awesome Address 432</p>
+                    <a href="mailto:ourmail@sometype.com" class="map-tooltip__text">ourmail@sometype.com</a>
+                    <a href="tel:+321032123343492" class="map-tooltip__text">+321(0)32 123 343 492</a>
+                </div>
+            </div>
         </section>
 
-
-        <!-- <footer class="footer">
-        </footer> -->
-
-        <br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <footer class="footer">
+            <p class="footer__text">&copy; 2014 - <a href="#" class="footer__link">Kat</a> All Right Reserved</p>
+        </footer>
 	</body>
 </html>

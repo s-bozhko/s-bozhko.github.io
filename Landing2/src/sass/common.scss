@@ -178,15 +178,6 @@ body {
 
 
 
-// /********************************************
-// 				FOOTER
-// ********************************************/
-
-.footer {
-	padding: 6px 0 3px; // ?? arrow abs
-	background-color: #131316;
-	text-align: center;
-}
 
 
 
@@ -332,6 +323,87 @@ body {
 
 		&:hover {
 			color: $primary-color;
+		}
+	}
+}
+
+
+.map {
+	position: relative;
+}
+
+.map-tooltip {
+	position: relative;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	z-index: 200;
+
+	width: 369px;
+	// height: 148px;
+	padding: 6px 18px 18px;
+	background-color: $primary-color;
+	color: #fff;
+	text-align: center;
+
+	&__text {
+		display: inline-block;
+		width: 100%;
+		margin: 10px 0;
+	
+		color: #fff;
+		font-size: 15px;
+		font-weight: $weight-medium;
+
+		&:hover {
+			text-decoration: none;
+		}
+	}
+
+	&:after {
+		content: "";
+		width: 0;
+		height: 0;
+
+		position: absolute;
+		top: 100%;
+	    left: 50%;
+	    margin: -1px 0 0 -13px;
+
+	    pointer-events: none;
+	    
+	  	border-top-width: 13px;
+	    border-left-width: 13px;
+	    border-right-width: 13px;
+	    border-color:  $primary-color transparent transparent;
+	    border-image: none;
+	    border-style: solid;
+	}
+}
+
+
+
+
+
+
+// /********************************************
+// 				FOOTER
+// ********************************************/
+
+.footer {
+	padding: 44px 0 38px;
+	background-color: #131316;
+	color: #fff;
+
+	font-size: 15px;
+	line-height: 20px;
+	text-align: center;
+
+	&__link {
+		color: $primary-color;
+
+		&:hover {
+			text-decoration: none;
 		}
 	}
 }
