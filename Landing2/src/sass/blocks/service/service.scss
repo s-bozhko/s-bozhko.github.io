@@ -3,42 +3,90 @@
 // ********************************************/
 
 .service {
-	padding-top: 130px;
-	padding-bottom: 79px;
+	padding-top: 70px;
+	padding-bottom: 40px;
 
 	text-align: center;
 
+	@media (min-width: $break_sm) {
+		padding-top: 130px;
+		padding-bottom: 79px;
+	}
+
 	&__item {
+
+		margin-bottom: 60px;
 
 		&:after {
 			content: "";
 			display: block;
 			width: 70px;
-			height: 63px;
+			
 			margin: 20px auto 0;
 			border-top: 2px solid $primary-color;
 		}
 
 		&_selected:after {
+			height: 63px;
 			border-left: 2px solid $primary-color;
 			border-right: 2px solid $primary-color;
 			border-bottom: 2px solid #fff;
+
+			&:first-child {
+				border-left: none;
+			}
+		}
+		
+		@media (min-width: $break_sm) {
+			margin-bottom: 0;
+
+			&_selected-left:after {
+				border-left: none;
+			}
+
+			&_selected-right:after {
+				border-right: none;
+			}
 		}
 	}
 
 	&__title {
-		margin-top: 36px;
+		margin-top: 15px;
 		margin-bottom: 10px;
 		
 		color: $secondary-color;
 
 		font-size: 15px;
 		text-transform: uppercase;
+
+		&:hover {
+			cursor: pointer;
+		}
+
+		@media (min-width: $break_sm) {
+			margin-top: 36px;
+		}
 	}
 
 	&__text {
-		margin-top: -2px;
-		padding: 44px 40px 40px 75px;
+		width: 100%;
+		margin: -2px auto 0;
+		padding: 30px;
+
+		
+		@media (min-width: $break_sm) {
+			width: 88%;
+			padding: 44px 40px 40px 75px;
+		}
+
+		@media (min-width: $break_md) {
+			width: 84%;
+		}
+
+		@media (min-width: $break_lg) {
+			width: 82%;
+		}
+
 		border-top: 2px solid $primary-color;
 		color: $text-color;
 		font-size: 15px;
@@ -49,18 +97,27 @@
 }
 
 .service-description {
-	padding-top: 52px;
-	padding-bottom: 99px;
+	padding: 50px 0;
+
+	@media (min-width: $break_sm) {
+		padding-top: 52px;
+		padding-bottom: 99px;
+	}
 
 	&__btn-group {
 		display: block;
 		width: 100%;
-		margin-bottom: 85px;
+		margin-bottom: 50px;
+
+		@media (min-width: $break_sm) {
+			margin-bottom: 85px;
+		}
+
 	}
 
 	&__btn {
 		width: 50%;
-		padding: 12px 35px 15px;
+		padding: 12px 5px 15px;
 		border: 1px solid #c8cdce;
 
 		background-color: transparent;
@@ -68,6 +125,12 @@
 		font-size: 14px;
 		font-weight: $weight-medium;
 		text-transform: uppercase;
+
+		transition: border 0.5s;
+
+		@media (min-width: $break_sm) {
+			padding: 12px 35px 15px;
+		}
 
 		&:hover {
 			background-color: transparent;
@@ -77,14 +140,53 @@
 
 		&_selected {
 			border: 1px solid $primary-color;
+
+			&:before, 
+			&:after {
+			    content: ''; 
+			    position: absolute;
+			    left: 47.5%; 
+			    bottom: -20px;
+
+			    border: 10px solid transparent;
+			    border-top: 10px solid $primary-color;
+			}
+			 
+			&:after {
+			    border-top: 10px solid #fbfbfb;
+			    bottom: -19px; 
+			}
+		}
+	}
+
+	&__image-container {
+		padding: 0 30px;
+	}
+
+	&__image {
+
+		display: block;
+		margin: 0 auto;
+
+		@media (min-width: $break_md) {
+			margin-left: 15%;
+		}
+
+		@media (min-width: $break_lg) {
+			margin-left: 24%;
 		}
 	}
 
 	&__title {
-		margin-top: 27px;
-		margin-bottom: 31px;
+		margin-top: 35px;
+		margin-bottom: 15px;
+		font-size: 32px;
 
-		font-size: 40px;
+		@media (min-width: $break_sm) {
+			margin-top: 27px;
+			margin-bottom: 31px;
+			font-size: 40px;
+		}
 	}
 
 	&__text {
@@ -97,13 +199,19 @@
 	}
 
 	&__button {
-		margin-top: 36px;
-		padding: 15px 50px 14px;
+		display: block;
+		width: 171px;
+		margin: 36px auto 0;
+		padding: 15px 10px 14px;
 		border-color: $primary-color;
 		color: $primary-color;
 
+		@media (min-width: $break_sm) {
+			display: inline-block;
+		}
+
 		&:hover {
-			color: $primary-color;
+			color: #fff;
 		}
 	}
 }

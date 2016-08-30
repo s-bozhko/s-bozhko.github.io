@@ -3,16 +3,21 @@
 // ********************************************/
 
 .portfolio {
+	padding-top: 20px;
 
-	//height: 500px;
-	padding-top: 56px;
+	@media (min-width: $break_sm) {
+		padding-top: 56px;
+	}
 
 	&__list {
 		list-style-type: none;
-		margin: 83px 0 0;
+		margin: 20px 0 0;
 		padding: 0;
 
-		height: 494px;
+		@media (min-width: $break_sm) {
+			// height: 494px;
+			margin: 83px 0 0;
+		}
 	}
 
 	&__item {
@@ -21,13 +26,14 @@
 	}
 
 	&__link {
+
 		&:hover div {
-			display: block;
+			opacity: 1;
 		}
 	}
 
 	&__description {
-		display: none;
+		opacity: 0;
 
 		position: absolute;
 		top: 0;
@@ -35,31 +41,49 @@
 		right: 0;
 		bottom: 0;
 
-		padding: 24% 0;
+		padding: 10% 10px;
 
-		background-color: rgba(255, 230, 0, .4); // $yellow;
+		background-color: rgba(0, 225, 255, 0.5);
 		color: #fff;
 		
 		text-transform: uppercase;
 		text-align: center;	
+
+		transition: all 0.3s;
+
+		@media (min-width: $break_sm) {
+			padding: 24% 0;
+		}
 	}
 
 	&__title {
-		font-size: 24px;
+		font-size: 20px;
 		font-weight: $weight-bold;
+
+		@media (min-width: $break_sm) {
+			font-size: 24px;
+		}
 	}
 
 	&__type {
-		font-size: 16px;
+		font-size: 14px;
+
+		@media (min-width: $break_sm) {
+			font-size: 16px;
+		}
 	}
 }
 
 
 .portfolio-category {
-	padding: 16px 26px 14px;
-	font-size: 13px;
+	padding: 16px 19px 14px;
 
 	color: $secondary-color;
+	font-size: 13px;
+
+	@media (min-width: $break_sm) {
+		padding: 16px 26px 14px;
+	}
 
 	&_selected {
 		border: 1px solid $primary-color;

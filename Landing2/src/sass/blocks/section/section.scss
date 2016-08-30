@@ -4,9 +4,13 @@
 
 .section {
 	&__heading {
-		margin: 35px 0;
+		margin: 30px 0;
 		text-align: center;
 		position: relative;
+
+		&_about {
+			padding-top: 20px;
+		}
 
 		@media (min-width: $break_sm) {
 			margin: 56px 0;

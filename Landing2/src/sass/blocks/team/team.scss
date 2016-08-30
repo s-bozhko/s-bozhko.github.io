@@ -3,27 +3,34 @@
 // ********************************************/
 
 .team {
-
-	padding-bottom: 120px;
 	text-align: center;
+
+	@media (min-width: $break_md) {
+		padding-bottom: 60px;
+	}
 
 	&__list {
 		padding: 3px 0 0;
 	}
 
+	&__item {
+		margin-bottom: 60px;
+
+		transition: box-shadow 0.5s;
+
+		&:hover {
+			box-shadow: 0 0 8px 3px rgba(0, 225, 255, 0.5);
+		}
+
+	}
+
 	&__member {
 		position: relative;
 		display: block;
-		// margin-bottom: 40px;
-		// border-bottom: 2px solid $gray;
 		background-color: #fff;
 
 		img {
 			margin: 0 auto;
-		}
-
-		@media (min-width: $break_md) {
-			// margin-bottom: 20px;
 		}
 	}
 

@@ -8,18 +8,24 @@
 
 	&__item  {
 		display: inline-block;
-		margin-left: 28px;
 
 		text-align: center;
 
-		&:first-child {
-			margin-left: 0;
+		@media (min-width: $break_sm) {
+			margin-left: 18px;
+
+			&:first-child {
+				margin-left: 0;
+			}
+		}
+
+		@media (min-width: $break_md) {
+			margin-left: 28px;
 		}
 	}
 
 	&__link {
 		display: inline-block;
-		min-width: 70px;
 		padding: 11px 5px;
 
 		color: $secondary-color;
@@ -28,14 +34,27 @@
 		line-height: 18px;
 		text-transform: uppercase;
 
+		transition: border 0.1s, color 0.3s;
+
+		@media (min-width: $break_sm) {
+			min-width: 70px;
+		}
+
 		&:hover,
 		&_active {
 			color: $primary-color;
-			border-bottom: 2px solid $primary-color;
+
+			@media (min-width: $break_sm) {
+				border-bottom: 2px solid $primary-color;
+			}
 		}
 
 		.navigation & {
-			padding: 38px 0px 40px;
+			padding: 15px 0px;
+
+			@media (min-width: $break_sm) {
+				padding: 38px 0px 40px;
+			}
 		}
 
 	}

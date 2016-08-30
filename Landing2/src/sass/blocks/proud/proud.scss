@@ -3,18 +3,34 @@
 // ********************************************/
 
 .proud-numbers {
-	padding-top: 72px;
-	padding-bottom: 80px;
+	padding-top: 60px;
+	padding-bottom: 20px;
 
 	color: #fff;
 	text-align: center;
 
+	@media (min-width: $break_sm) {
+		padding-top: 72px;
+	}
+
 	&__number {
-		margin-top: 31px;
+		margin-top: 20px;
 		margin-bottom: 19px;
 
-		font-size: 40px;
+		font-size: 36px;
 		font-weight: $weight-light;
+
+		@media (min-width: $break_sm) {
+			margin-top: 31px;
+		}
+
+		@media (min-width: $break_md) {
+			font-size: 40px;
+		}
+	}
+
+	&__item {
+		margin-bottom: 60px;
 	}
 
 	&__title {

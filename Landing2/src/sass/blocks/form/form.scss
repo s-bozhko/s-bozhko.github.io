@@ -2,13 +2,17 @@
 // 				CONTACT FORM
 // ********************************************/
 .contact {
-	padding-bottom: 91px;
+	padding-bottom: 50px;
+
+	@media (min-width: $break_sm) {
+		padding-bottom: 91px;
+	}
 }
 
 .form {
 	
 	&__wrapper {
-		//margin-bottom: 13px;
+		margin-bottom: 40px;
 
 		&:after {
 		    content: "";
@@ -54,12 +58,21 @@
 	}
 
 	&__message {
-		margin-top: 71px;
+		margin-bottom: 0;
+
+		@media (min-width: $break_sm) {
+			margin-top: 31px;
+		}
 	}
 
 	&__commands {
-		margin-top: 30px;
-		text-align: right;
+		margin-top: 40px;
+		text-align: center;
+
+		@media (min-width: $break_sm) {
+			margin-top: 30px;
+			text-align: right;
+		}
 	}
 
 	&__submit {
