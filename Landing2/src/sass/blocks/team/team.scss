@@ -5,10 +5,6 @@
 .team {
 	text-align: center;
 
-	@media (min-width: $break_md) {
-		padding-bottom: 60px;
-	}
-
 	&__list {
 		padding: 3px 0 0;
 	}
