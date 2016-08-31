@@ -17,6 +17,10 @@
 
 		margin-bottom: 60px;
 
+		&:hover {
+			cursor: pointer;
+		}
+
 		&:after {
 			content: "";
 			display: block;
@@ -58,10 +62,6 @@
 
 		font-size: 15px;
 		text-transform: uppercase;
-
-		&:hover {
-			cursor: pointer;
-		}
 
 		@media (min-width: $break_sm) {
 			margin-top: 36px;

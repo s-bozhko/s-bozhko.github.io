@@ -14,9 +14,14 @@
 	}
 
 	&__item {
+		max-width: 420px;
 		margin-bottom: 60px;
-
+		
 		transition: box-shadow 0.5s;
+
+		@media (max-width: $break_sm - 1) {
+			margin: 0 auto 60px;
+		}
 
 		&:hover {
 			box-shadow: 0 0 8px 3px rgba(0, 225, 255, 0.5);
@@ -35,13 +40,20 @@
 	}
 
 	&__image-container {
-		height: 139px;
+		// height: 139px;
 		background-color: #252726;
+		position: relative;
 	}
 
 	&__info {
-		background-color: #1c1d1e;
+
+		background-color: rgba(28, 29, 30, 0.66);
 		padding: 0 0 11px;
+
+		position: absolute;
+		left: 0;
+		right: 0;
+		bottom: 0;
 	}
 
 	&__name {
