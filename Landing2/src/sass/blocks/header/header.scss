@@ -61,10 +61,12 @@
 	}
 
 	&__navigation {
+		margin-top: 5px;
 		padding: 0;
         border-top: 1px solid $text-color;
 
 		@media (min-width: $break_sm) {
+			margin-top: 0;
 			float: right;
             border-top: none;
 		}

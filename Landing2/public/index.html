@@ -22,31 +22,34 @@
             <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
         <![endif]-->
     </head>
-    <body>  
+    <body ng-controller="MainCtrl" on-resize>  
         <header class="header" id="top">
             <div class="header__wrapper">
                 <div class="container"> 
-                    <div class="header__logo">
-                        <a href="#">
-                            <img src="img/logo.png" alt="Smak">
-                        </a>
-                    </div>
-                    <div class="navbar-header"> 
-                        <button aria-controls="bs-navbar" aria-expanded="false" class="collapsed navbar-toggle" data-target="#bs-navbar" data-toggle="collapse" type="button"> 
-                            <span class="sr-only">Toggle navigation</span> 
-                            <span class="icon-bar"></span> 
-                            <span class="icon-bar"></span> 
-                            <span class="icon-bar"></span> 
-                        </button>
-                    </div> 
-                    <nav class="collapse navbar-collapse header__navigation clearfix" id="bs-navbar"> 
+                    <!-- <div class="header__wrapper"> -->
+                        <div class="header__logo">
+                            <a href="#">
+                                <img src="img/logo.png" alt="Smak">
+                            </a>
+                        </div>
+                        <div class="navbar-header"> 
+                            <button aria-controls="bs-navbar" aria-expanded="false" class="collapsed navbar-toggle" data-target="#bs-navbar" data-toggle="collapse" type="button" ng-click="toogleMenu()"> 
+                                <span class="sr-only">Toggle navigation</span> 
+                                <span class="icon-bar"></span> 
+                                <span class="icon-bar"></span> 
+                                <span class="icon-bar"></span> 
+                            </button>
+                        </div> 
+                    <!-- </div> -->
+
+                    <nav class="navbar-collapse header__navigation clearfix collapse" ng-class="menuStyle" id="bs-navbar"> 
                         <ul class="nav navbar-nav navigation list"> 
                             <li class="navigation__item"><a href="#" class="navigation__link link navigation__link_active" scroll-to="top">Home</a></li>
-                            <li class="navigation__item"><a href="#services" class="navigation__link link" scroll-to="services" offset="100">Services</a></li>
-                            <li class="navigation__item"><a href="#portfolio" class="navigation__link link" scroll-to="portfolio" offset="100">Portfolio</a></li>
-                            <li class="navigation__item"><a href="#about" class="navigation__link link" scroll-to="about" offset="100">About</a></li>
-                            <li class="navigation__item"><a href="#news" class="navigation__link link" scroll-to="news" offset="100">News</a></li>
-                            <li class="navigation__item"><a href="#contacts" class="navigation__link link" scroll-to="contacts" offset="100">Contact</a></li>
+                            <li class="navigation__item"><a href="#services" class="navigation__link link" scroll-to="services" offset="{{scrollOffset}}">Services</a></li>
+                            <li class="navigation__item"><a href="#portfolio" class="navigation__link link" scroll-to="portfolio" offset="{{scrollOffset}}">Portfolio</a></li>
+                            <li class="navigation__item"><a href="#about" class="navigation__link link" scroll-to="about" offset="{{scrollOffset}}">About</a></li>
+                            <li class="navigation__item"><a href="#news" class="navigation__link link" scroll-to="news" offset="{{scrollOffset}}">News</a></li>
+                            <li class="navigation__item"><a href="#contacts" class="navigation__link link" scroll-to="contacts" offset="{{scrollOffset}}">Contact</a></li>
                         </ul>
                     </nav> 
                 </div>
@@ -57,42 +60,30 @@
             <div class="container">
                 <div class="intro__container">
                     <p class="intro__title lead">We make websites</p>
-                    <a href="#" class="btn btn-primary intro__button" scroll-to="portfolio" offset="100">Start tour</a>
+                    <a href="#" class="btn btn-primary intro__button" scroll-to="portfolio" offset="{{scrollOffset}}">Start tour</a>
                 </div>
             </div>
         </div>
 
         <section id="services">
-            <div class="container service">
+            <div class="container service" ng-controller="ServicesCtrl" ng-cloak>
                 <div class="row">
-                    <div class="col-sm-3">
-                        <div class="service__item service__item_selected service__item_selected-left">
-                            <div class="service__icon"><i class="icon icon_desktop"></i></div>
-                            <h3 class="service__title">Web design</h3>
-                        </div>
-                    </div>
-                    <div class="col-sm-3">
-                        <div class="service__item">
-                            <div class="service__icon"><i class="icon icon_pencil"></i></div>
-                            <h3 class="service__title">Graphic design</h3>
-                        </div>
-                    </div>
-                    <div class="col-sm-3">
-                        <div class="service__item">
-                            <div class="service__icon"><i class="icon icon_gear"></i></div>
-                            <h3 class="service__title">Programming</h3>
-                        </div>
-                    </div>
-                    <div class="col-sm-3">
-                        <div class="service__item">
-                            <div class="service__icon"><i class="icon icon_camera"></i></div>
-                            <h3 class="service__title">Photography</h3>
-                        </div>
-                    </div>
+                    <ul class="service__list">
+                        <li ng-repeat="item in serviceItems" ng-class="{service__item_selected: selectedItem == $index+1}" ng-click="select($index+1)" class="col-xs-6 col-sm-3 service__item">
+                            <div class="service__icon"><i class="icon" ng-class="[item.iconClass]"></i></div>
+                            <h3 class="service__title">{{item.title}}</h3>
+                        </li>       
+                    </ul>
                 </div>
-
-                <div class="service__text">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute i rure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                <div ng-switch="selectedItem">
+                    <p class="service__text" ng-switch-when="1">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute i rure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    </p>
+                    <p class="service__text" ng-switch-when="2">Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue.
+                    </p>
+                    <p class="service__text" ng-switch-when="3">Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt.
+                    </p>
+                    <p class="service__text" ng-switch-when="4">Fusce vulputate eleifend sapien. Vestibulum purus quam, scelerisque ut, mollis sed, nonummy id, metus. Nullam accumsan lorem in dui. Cras ultricies mi eu turpis hendrerit fringilla. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; In ac dui quis mi consectetuer lacinia. Nam pretium turpis et arcu. Duis arcu tortor, suscipit eget, imperdiet nec, imperdiet iaculis, ipsum. Sed aliquam ultrices mauris.
+                    </p>
                 </div>
             </div>
 
@@ -110,16 +101,11 @@
                     <div class="row">
                         <div class="col-sm-6 service-description__image-container">
                             <img src="img/phones.png" alt="Phones" class="img-responsive service-description__image">
-                            <!-- <div class="row">
-                                <div class="col-sm-10 col-sm-push-2">
-                                   
-                                </div>
-                            </div> -->
                         </div>
                         <div class="col-sm-6">
                             <h3 class="service-description__title">Fully Responsive</h3>
                             <p class="service-description__text">Eum cu tantas legere complectitur, hinc utamur ea eam. Lorem ipsum dolor sit amet, volumus temporibus definitionem id ius, vel ut magna timeam appareat, movet timeam maiorum an ius. <br> Sea libris dictas lucilius et. Ne cibo urbanitas pri, qui ad populo accusamus. Quod congue ea ius, nisl aperiri sit ut.</p>
-                            <a href="#" class="btn btn-primary service-description__button">Get now</a>
+                            <a href="#" class="btn btn-primary service-description__button" scroll-to="contacts" offset="{{scrollOffset}}">Get now</a>
                         </div>  
                     </div>
                 </div>
@@ -128,7 +114,7 @@
 
         <section id="portfolio">
            
-            <div class="portfolio">
+            <div class="portfolio" ng-controller="PortfolioCtrl" ng-cloak>
                 <div class="container">
                     <div class="section__heading section__heading_portfolio">
                         <h1 class="section__title">Our Portfolio</h1>
@@ -142,10 +128,10 @@
                     <div class="row">
                         <div class="col-sm-12">
                             <ul class="section__list list clearfix">
-                                <li class="list__item"><a href="#" class="portfolio-category list__link link portfolio-category_selected" data-category="all">All</a></li>
-                                <li class="list__item"><a href="#" class=" portfolio-category list__link link" data-category="web-design">Web</a></li>
-                                <li class="list__item"><a href="#" class=" portfolio-category list__link link" data-category="photography">Photography</a></li>
-                                <li class="list__item"><a href="#" class=" portfolio-category list__link link" data-category="graphic-design">Graphic Design</a></li>
+                                <li class="list__item"><a href="#" class="portfolio-category list__link link" ng-class="[categories.all]" ng-click="showMatch('all', $event)">All</a></li>
+                                <li class="list__item"><a href="#" class="portfolio-category list__link link" ng-class="[categories.web]" ng-click="showMatch('web', $event)">Web</a></li>
+                                <li class="list__item"><a href="#" class="portfolio-category list__link link" ng-class="[categories.photography]" ng-click="showMatch('photography', $event)">Photography</a></li>
+                                <li class="list__item"><a href="#" class="portfolio-category list__link link" ng-class="[categories.graphic]" ng-click="showMatch('graphic', $event)">Graphic Design</a></li>
                                 <!-- <li class="list__item"><a href="#" class=" portfolio-category list__link link" data-category="illustration">Illustration</a></li> -->
                             </ul>
                         </div>
@@ -154,111 +140,12 @@
                 <div class="container-fluid">
                     <div class="row">
                         <ul class="portfolio__list clearfix" id="portfolioGrid">
-                            <li class="portfolio__item col-xs-6 col-sm-4 col-md-3 col-lg-2" data-category="graphic-design">
-                                <a href="#" class="portfolio__link">
-                                    <img src="img/port-1.jpg" class="img-responsive" alt="Image 1">
+                            <li ng-repeat="item in portfolioItems | filter: itemFilter" class="portfolio__item col-xs-6 col-sm-4 col-md-3 col-lg-2" >
+                                <a href="{{item.link}}" class="portfolio__link">
+                                    <img ng-src="{{item.image}}" class="img-responsive" alt="{{item.alt}}">
                                     <div class="portfolio__description">
-                                        <h4 class="portfolio__title">Sample Image</h4>
-                                        <p class="portfolio__type">Graphic Design</p>
-                                    </div>
-                                </a>
-                            </li>
-                            <li class="portfolio__item col-xs-6 col-sm-4 col-md-3 col-lg-2" data-category="web-design">
-                                <a href="#" class="portfolio__link">
-                                    <img src="img/port-2.jpg" class="img-responsive" alt="Image 2">
-                                    <div class="portfolio__description">
-                                        <h4 class="portfolio__title">Sample Image</h4>
-                                        <p class="portfolio__type">Web Design</p>
-                                    </div>
-                                </a>
-                            </li>
-                            <li class="portfolio__item col-xs-6 col-sm-4 col-md-3 col-lg-2" data-category="photography">
-                                <a href="#" class="portfolio__link">
-                                    <img src="img/port-3.jpg" class="img-responsive" alt="Image 3">
-                                    <div class="portfolio__description">
-                                        <h4 class="portfolio__title">Sample Image</h4>
-                                        <p class="portfolio__type">Photography</p>
-                                    </div>
-                                </a>
-                            </li>
-                            <li class="portfolio__item col-xs-6 col-sm-4 col-md-3 col-lg-2" data-category="illustration">
-                                <a href="#" class="portfolio__link">
-                                    <img src="img/port-4.jpg" class="img-responsive" alt="Image 4">
-                                    <div class="portfolio__description">
-                                        <h4 class="portfolio__title">Sample Image</h4>
-                                        <p class="portfolio__type">Illustration</p>
-                                    </div>
-                                </a>
-                            </li>
-                            <li class="portfolio__item col-xs-6 col-sm-4 col-md-3 col-lg-2" data-category="graphic-design">
-                                <a href="#" class="portfolio__link">
-                                    <img src="img/port-5.jpg" class="img-responsive" alt="Image 5">
-                                    <div class="portfolio__description">
-                                        <h4 class="portfolio__title">Sample Image</h4>
-                                        <p class="portfolio__type">Graphic Design</p>
-                                    </div>
-                                </a>
-                            </li>
-                            <li class="portfolio__item col-xs-6 col-sm-4 col-md-3 col-lg-2" data-category="web-design">
-                                <a href="#" class="portfolio__link">
-                                    <img src="img/port-6.jpg" class="img-responsive" alt="Image 6">
-                                    <div class="portfolio__description">
-                                        <h4 class="portfolio__title">Sample Image</h4>
-                                        <p class="portfolio__type">Web Design</p>
-                                    </div>
-                                </a>
-                            </li>
-                            <li class="portfolio__item col-xs-6 col-sm-4 col-md-3 col-lg-2" data-category="photography">
-                                <a href="#" class="portfolio__link">
-                                    <img src="img/port-7.jpg" class="img-responsive" alt="Image 7">
-                                    <div class="portfolio__description">
-                                        <h4 class="portfolio__title">Sample Image</h4>
-                                        <p class="portfolio__type">Photography</p>
-                                    </div>
-                                </a>
-                            </li>
-                            <li class="portfolio__item col-xs-6 col-sm-4 col-md-3 col-lg-2" data-category="illustration">
-                                <a href="#" class="portfolio__link">
-                                    <img src="img/port-8.jpg" class="img-responsive" alt="Image 8">
-                                    <div class="portfolio__description">
-                                        <h4 class="portfolio__title">Sample Image</h4>
-                                        <p class="portfolio__type">Illustration</p>
-                                    </div>
-                                </a>
-                            </li>
-                            <li class="portfolio__item col-xs-6 col-sm-4 col-md-3 col-lg-2" data-category="graphic-design">
-                                <a href="#" class="portfolio__link">
-                                    <img src="img/port-9.jpg" class="img-responsive" alt="Image 9">
-                                    <div class="portfolio__description">
-                                        <h4 class="portfolio__title">Sample Image</h4>
-                                        <p class="portfolio__type">Graphic Design</p>
-                                    </div>
-                                </a>
-                            </li>
-                            <li class="portfolio__item col-xs-6 col-sm-4 col-md-3 col-lg-2" data-category="web-design">
-                                <a href="#" class="portfolio__link">
-                                    <img src="img/port-10.jpg" class="img-responsive" alt="Image 10">
-                                    <div class="portfolio__description">
-                                        <h4 class="portfolio__title">Sample Image</h4>
-                                        <p class="portfolio__type">Web Design</p>
-                                    </div>
-                                </a>
-                            </li>
-                            <li class="portfolio__item col-xs-6 col-sm-4 col-md-3 col-lg-2" data-category="photography">
-                                <a href="#" class="portfolio__link">
-                                    <img src="img/port-11.jpg" class="img-responsive" alt="Image 11">
-                                    <div class="portfolio__description">
-                                        <h4 class="portfolio__title">Sample Image</h4>
-                                        <p class="portfolio__type">Photography</p>
-                                    </div>
-                                </a>
-                            </li>
-                            <li class="portfolio__item col-xs-6 col-sm-4 col-md-3 col-lg-2" data-category="illustration">
-                                <a href="#" class="portfolio__link">
-                                    <img src="img/port-12.jpg" class="img-responsive" alt="Image 12">
-                                    <div class="portfolio__description">
-                                        <h4 class="portfolio__title">Sample Image</h4>
-                                        <p class="portfolio__type">Illustration</p>
+                                        <h4 class="portfolio__title">{{item.title}}</h4>
+                                        <p class="portfolio__type">{{item.type}}</p>
                                     </div>
                                 </a>
                             </li>
