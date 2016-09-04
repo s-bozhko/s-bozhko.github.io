@@ -6,15 +6,18 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Landing Template 2</title>
 
+        <base href="/public" />
 
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,700,800" rel="stylesheet">
         <link rel="stylesheet" href="css/bootstrap.css">
         <link rel="stylesheet" href="css/font-awesome.css">
         <link rel="stylesheet" href="css/style.css">
 
-
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
         <script src="js/angular-smooth-scroll.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-cookies.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-route.js"></script>
         <script src="js/app.js"></script>
 
         <!--[if lte IE 9]>
@@ -113,7 +116,6 @@
         </section>
 
         <section id="portfolio">
-           
             <div class="portfolio" ng-controller="PortfolioCtrl" ng-cloak>
                 <div class="container">
                     <div class="section__heading section__heading_portfolio">
@@ -153,40 +155,9 @@
                     </div>
                 </div>
             </div>
-            <div class="dark">
+            <div class="dark" ng-cloak>
                 <div class="proud-numbers">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-sm-3">
-                                <div class="proud-numbers__item">
-                                    <div class="proud-numbers__icon"><i class="icon-proud icon-proud_case"></i></div>
-                                    <h3 class="proud-numbers__number">3054</h3>
-                                    <p class="proud-numbers__title">Completed projects</p>
-                                </div>
-                            </div>
-                            <div class="col-sm-3">
-                                <div class="proud-numbers__item">
-                                    <div class="proud-numbers__icon"><i class="icon-proud icon-proud_mouse"></i></div>
-                                    <h3 class="proud-numbers__number">7 234 873</h3>
-                                    <p class="proud-numbers__title">Click presed</p>
-                                </div>
-                            </div>
-                            <div class="col-sm-3">
-                                <div class="proud-numbers__item">
-                                    <div class="proud-numbers__icon"><i class="icon-proud icon-proud_letter"></i></div>
-                                    <h3 class="proud-numbers__number">4670</h3>
-                                    <p class="proud-numbers__title">Mails sented & recived</p>
-                                </div>
-                            </div>
-                            <div class="col-sm-3">
-                                <div class="proud-numbers__item">
-                                    <div class="proud-numbers__icon"><i class="icon-proud icon-proud_dialog"></i></div>
-                                    <h3 class="proud-numbers__number">939</h3>
-                                    <p class="proud-numbers__title">Jokes tolds</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <div statistics-dir></div>
                 </div>
             </div>
         </section>
@@ -206,166 +177,13 @@
             <div class="container">
                 <div class="row">
                     <div class="team">
-                        <ul class="team__list list clearfix" id="og-grid">
-                            <li class="col-sm-6 col-md-3">
-                                <div class="team__item">
-                                    <a href="#" class="team__member link" data-title="John Doe" data-description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam semper nulla ut augue consectetur, at consequat enim malesuada." data-twitter="twitter" data-facebook="facebook">
-                                        <div class="team__image-container">
-                                            <img src="img/team-member-1.jpg" alt="Harold Finch" class="img-responsive team__image">
-                                            <div class="team__info">
-                                                <span class="team__name">Harold Finch</span>
-                                                <span class="team__title">Systems Analyst</span>
-                                            </div>
-                                        </div>
-                                        <p class="team__text">Eum cu tantas legere complectitur, hinc utamur ea eam. Eum patrioque mnesarchum eu.</p>
-                                    </a>
-                                    <div class="social">
-                                        <ul class="social__list list">
-                                            <li class="social__item social__item_bio">
-                                                <a href="#" class="social__link social__link_facebook link">
-                                                    <i class="fa fa-facebook social__icon"></i>
-                                                </a>
-                                            </li>
-                                            <li class="social__item social__item_bio">
-                                                <a href="#" class="social__link social__link_twitter link">
-                                                    <i class="fa fa-twitter social__icon"></i>
-                                                </a>
-                                            </li>
-                                             <li class="social__item social__item_bio">
-                                                <a href="#" class="social__link social__link_google link">
-                                                    <i class="fa fa-google-plus social__icon"></i>
-                                                </a>
-                                            </li>
-                                            <li class="social__item social__item_bio">
-                                                <a href="#" class="social__link social__link_dribble link">
-                                                    <i class="fa fa-dribbble social__icon"></i>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="col-sm-6 col-md-3">
-                                <div class="team__item">
-                                    <a href="#" class="team__member link" data-title="John Doe" data-description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam semper nulla ut augue consectetur, at consequat enim malesuada." data-twitter="twitter" data-facebook="facebook">
-                                        <div class="team__image-container">
-                                            <img src="img/team-member-2.jpg" alt=" John Reese" class="img-responsive team__image">
-                                            <div class="team__info">
-                                                <span class="team__name">John Reese</span>
-                                                <span class="team__title">Photographer</span>
-                                            </div>
-                                        </div>
-                                        <p class="team__text">Eum cu tantas legere complectitur, hinc utamur ea eam. Eum patrioque mnesarchum eu.</p>
-                                    </a>
-                                    <div class="social">
-                                        <ul class="social__list list">
-                                            <li class="social__item social__item_bio">
-                                                <a href="#" class="social__link social__link_facebook link">
-                                                    <i class="fa fa-facebook social__icon"></i>
-                                                </a>
-                                            </li>
-                                            <li class="social__item social__item_bio">
-                                                <a href="#" class="social__link social__link_twitter link">
-                                                    <i class="fa fa-twitter social__icon"></i>
-                                                </a>
-                                            </li>
-                                             <li class="social__item social__item_bio">
-                                                <a href="#" class="social__link social__link_google link">
-                                                    <i class="fa fa-google-plus social__icon"></i>
-                                                </a>
-                                            </li>
-                                            <li class="social__item social__item_bio">
-                                                <a href="#" class="social__link social__link_dribble link">
-                                                    <i class="fa fa-dribbble social__icon"></i>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="col-sm-6 col-md-3">
-                                <div class="team__item">
-                                    <a href="#" class="team__member link" data-title="John Doe" data-description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam semper nulla ut augue consectetur, at consequat enim malesuada." data-twitter="twitter" data-facebook="facebook">
-                                        <div class="team__image-container">
-                                            <img src="img/team-member-3.jpg" alt="Samantha Groves" class="img-responsive team__image">              
-                                            <div class="team__info">
-                                                <span class="team__name">Samantha Groves</span>
-                                                <span class="team__title">Sales Manager</span>
-                                            </div>
-                                        </div>
-                                        <p class="team__text">Eum cu tantas legere complectitur, hinc utamur ea eam. Eum patrioque mnesarchum eu.</p>
-                                    </a>
-                                    <div class="social">
-                                        <ul class="social__list list">
-                                            <li class="social__item social__item_bio">
-                                                <a href="#" class="social__link social__link_facebook link">
-                                                    <i class="fa fa-facebook social__icon"></i>
-                                                </a>
-                                            </li>
-                                            <li class="social__item social__item_bio">
-                                                <a href="#" class="social__link social__link_twitter link">
-                                                    <i class="fa fa-twitter social__icon"></i>
-                                                </a>
-                                            </li>
-                                             <li class="social__item social__item_bio">
-                                                <a href="#" class="social__link social__link_google link">
-                                                    <i class="fa fa-google-plus social__icon"></i>
-                                                </a>
-                                            </li>
-                                            <li class="social__item social__item_bio">
-                                                <a href="#" class="social__link social__link_dribble link">
-                                                    <i class="fa fa-dribbble social__icon"></i>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="col-sm-6 col-md-3">
-                                <div class="team__item">
-                                    <a href="#" class="team__member link" data-title="John Doe" data-description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam semper nulla ut augue consectetur, at consequat enim malesuada." data-twitter="twitter" data-facebook="facebook">
-                                        <div class="team__image-container">
-                                            <img src="img/team-member-4.jpg" alt="Lionel Fusco" class="img-responsive team__image">
-                                            <div class="team__info">
-                                                <span class="team__name">Lionel Fusco</span>
-                                                <span class="team__title">Graphic Designer</span>
-                                            </div>
-                                        </div>
-                                        <p class="team__text">Eum cu tantas legere complectitur, hinc utamur ea eam. Eum patrioque mnesarchum eu.</p>
-                                    </a>
-                                    <div class="social">
-                                        <ul class="social__list list">
-                                            <li class="social__item social__item_bio">
-                                                <a href="#" class="social__link social__link_facebook link">
-                                                    <i class="fa fa-facebook social__icon"></i>
-                                                </a>
-                                            </li>
-                                            <li class="social__item social__item_bio">
-                                                <a href="#" class="social__link social__link_twitter link">
-                                                    <i class="fa fa-twitter social__icon"></i>
-                                                </a>
-                                            </li>
-                                             <li class="social__item social__item_bio">
-                                                <a href="#" class="social__link social__link_google link">
-                                                    <i class="fa fa-google-plus social__icon"></i>
-                                                </a>
-                                            </li>
-                                            <li class="social__item social__item_bio">
-                                                <a href="#" class="social__link social__link_dribble link">
-                                                    <i class="fa fa-dribbble social__icon"></i>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </li>
-                        </ul>    
+                        <div about-dir></div>
                     </div>  
                 </div>
             </div>
         </section>
 
-        <section id="news">
+        <section id="news" ng-controller="NewsCtrl">
             <div class="container">
                 <div class="section__heading section__heading_news">
                     <h1 class="section__title">Check our news</h1>
@@ -381,53 +199,21 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-sm-10 col-sm-push-1">
-                            <div class="news__item single-news">
+                            <div class="news__item single-news" ng-repeat="item in news | orderBy:'date':'reverse'">
                                 <div class="single-news__time">
-                                    <div class="single-news__date">25</div>
-                                    <div class="single-news__month">September</div>
+                                    <div class="single-news__date" ng-bind="item.date | date:'dd'"></div>
+                                    <div class="single-news__month" ng-bind="item.date | date:'MMMM'"></div>
                                 </div>
                                 <div class="single-news__description">
-                                    <p class="single-news__text"> Eum cu tantas legere complectitur, hinc utamur ea eam. Eum patrioque mnesarchum eu, diam erant convenire et vis. Et essent evertitur sea, vis cu ubique referrentur, sed eu dicant expetendis.
-                                    </p>
-                                    <a href="#" class="single-news__link link">Read More</a>
-                                </div>
-                            </div>
-                            <div class="news__item single-news">
-                                <div class="single-news__time">
-                                    <div class="single-news__date">15</div>
-                                    <div class="single-news__month">June</div>
-                                </div>
-                                <div class="single-news__description">
-                                    <p class="single-news__text"> Eum cu tantas legere complectitur, hinc utamur ea eam. Eum patrioque mnesarchum eu, diam erant convenire et vis. Et essent evertitur sea, vis cu ubique referrentur, sed eu dicant expetendis.
-                                    </p>
-                                    <a href="#" class="single-news__link link">Read More</a>
-                                </div>
-                            </div>
-                            <div class="news__item single-news">
-                                <div class="single-news__time">
-                                    <div class="single-news__date">07</div>
-                                    <div class="single-news__month">April</div>
-                                </div>
-                                <div class="single-news__description">
-                                    <p class="single-news__text"> Eum cu tantas legere complectitur, hinc utamur ea eam. Eum patrioque mnesarchum eu, diam erant convenire et vis. Et essent evertitur sea, vis cu ubique referrentur, sed eu dicant expetendis.
-                                    </p>
-                                    <a href="#" class="single-news__link link">Read More</a>
-                                </div>
-                            </div>
-                             <div class="news__item single-news">
-                                <div class="single-news__time">
-                                    <div class="single-news__date">04</div>
-                                    <div class="single-news__month">May</div>
-                                </div>
-                                <div class="single-news__description">
-                                    <p class="single-news__text"> Eum cu tantas legere complectitur, hinc utamur ea eam. Eum patrioque mnesarchum eu, diam erant convenire et vis. Et essent evertitur sea, vis cu ubique referrentur, sed eu dicant expetendis.
-                                    </p>
-                                    <a href="#" class="single-news__link link">Read More</a>
+                                    <p class="single-news__text" ng-bind="item.text"></p>
+                                    <a href="/{{item.id}}" class="single-news__link link">Read More</a>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+
+                <div ng-view></div>
             </div>
         </section>
 
@@ -443,32 +229,35 @@
                     </div>
                 </div>
             </div>
-            <div class="contact">
+            <div class="contact" ng-controller="ContactsCtrl">
                 <div class="container">
                     <div class="row">
                         <div class="col-sm-12 col-md-10 col-md-push-1 col-lg-8 col-lg-push-2">
-                            <form class="form-horizontal form">
+                            <form class="form-horizontal form" name="form" ng-submit="submitHandler(field)" novalidate>
                                 <div class="form-group">
                                     <div class="col-sm-6">
                                         <div class="form__wrapper">
-                                            <input name="name" class="form__input form-control" placeholder="Your name here" type="text">
+                                            <input type="text" name="fieldName" class="form__input form-control" placeholder="Your name here" ng-model="field.name" ng-pattern="nameRegexp" required>
+                                            <span class="form__warning-text" ng-if="form.fieldName.$invalid && form.fieldName.$dirty">{{formWarnings.name}}</span>
                                         </div>
                                     </div>
                                     <div class="col-sm-6">
                                         <div class="form__wrapper">
-                                            <input name="mail" class="form__input form-control" placeholder="Your mail here" type="text">
+                                            <input type="mail" name="fieldMail" class="form__input form-control" placeholder="Your mail here" ng-model="field.mail" ng-pattern="mailRegexp" required>
+                                            <span class="form__warning-text" ng-if='form.fieldMail.$invalid && form.fieldMail.$dirty'>{{formWarnings.mail}}</span>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <div class="col-sm-12">
                                         <div class="form__wrapper form__message">
-                                            <input name="subject" class="form__input form-control" placeholder="Your message here" type="text">
+                                            <input type="text" name="fieldMessage" class="form__input form-control" placeholder="Your message here" ng-model="field.message" ng-pattern="messageRegexp" required>
+                                            <span class="form__warning-text" ng-if='form.fieldMessage.$invalid && form.fieldMessage.$dirty'>{{formWarnings.message}}</span>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="form__commands">
-                                    <input type="submit" class="btn btn-primary form__submit" value="Send Message" />
+                                    <input type="submit" class="btn btn-primary form__submit" value="Send Message" ng-disabled="form.$invalid"/>
                                 </div>
                             </form>
                         </div>    

@@ -13,6 +13,7 @@
 	
 	&__wrapper {
 		margin-bottom: 40px;
+		position: relative;
 
 		&:after {
 		    content: "";
@@ -58,11 +59,24 @@
 	}
 
 	&__message {
-		margin-bottom: 0;
+		margin-top: 13px;
+		margin-bottom: 13px;
 
 		@media (min-width: $break_sm) {
 			margin-top: 31px;
+			margin-bottom: 0;
 		}
+	}
+
+
+	&__warning-text {
+		position: absolute;
+		top: 100%;
+		left: 5px;
+		margin-top: 5px;
+
+		color: #ff3333;
+		font-size: 13px;
 	}
 
 	&__commands {

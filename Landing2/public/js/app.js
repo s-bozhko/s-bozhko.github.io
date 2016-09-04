@@ -1,4 +1,4 @@
-var module = angular.module('landing2App', ['smoothScroll']);
+var module = angular.module('landing2App', ['smoothScroll', 'ngRoute',  'ngCookies']);
 
 
 module.controller('MainCtrl', function ($scope) {
@@ -193,4 +193,179 @@ module.controller('PortfolioCtrl', function ($scope) {
 			link: '#',
 			category: 'graphic'
 		}];
+});
+
+
+
+module.directive('statisticsDir', function($interval) {
+    return {
+		restrict: 'A',
+		replace: true,
+		templateUrl: "templates/statistics.html",
+		controller: function ($scope) {
+			$scope.statistics = [
+				{number: 3054, text: 'Completed projects', iconClass: 'icon-proud_case'},
+				{number: 7234873, text: 'Click presed', iconClass: 'icon-proud_mouse'},
+				{number: 4670, text: 'Mails sented & received', iconClass: 'icon-proud_letter'},
+				{number: 939, text: 'Jokes tolds', iconClass: 'icon-proud_dialog'}
+			];
+
+			this.countValue = function (item) {
+				var finalValue = item.number;
+				var start = 0;
+				var delta = parseInt(finalValue / 100);
+
+				var timer = $interval(function() {
+					start += delta;
+					if (start > finalValue) {
+						start = finalValue;
+						$interval.cancel(timer);
+					}
+
+					item.number = start;
+				}, 30);
+			};
+		}
+	};
+});
+
+
+module.directive('countDir', function($document) {
+	return {
+		require: '^statisticsDir',
+		link: function (scope, element, attribute, ctrl) {
+
+			$document.on('scroll', startCount);
+
+			function startCount() {
+				if (pageYOffset + document.documentElement.clientHeight > element.offset().top
+				&& pageYOffset + scope.scrollOffset < element.offset().top + element.outerHeight()) {
+					ctrl.countValue(scope.item);
+					$document.off('scroll', startCount);
+				};
+			};
+
+			startCount();
+		}
+	};
+});
+
+
+module.directive('aboutDir', function () {
+	return {
+		restrict: 'A',
+		replace: true,
+		templateUrl: 'templates/about.html',
+		controller: function ($scope) {
+			$scope.team = [
+				{
+					name: 'Harold Finch',
+					occupation: 'Systems Analyst',
+					description: 'Eum cu tantas legere complectitur, hinc utamur ea eam. Eum patrioque mnesarchum eu.',
+					imgUrl: 'img/team-member-1.jpg'
+				},
+				{
+					name: 'John Reese',
+					occupation: 'Photographer',
+					description: 'Eum cu tantas legere complectitur, hinc utamur ea eam. Eum patrioque mnesarchum eu.',
+					imgUrl: 'img/team-member-2.jpg'
+				},
+				{
+					name: 'Samantha Groves',
+					occupation: 'Sales Manager',
+					description: 'Eum cu tantas legere complectitur, hinc utamur ea eam. Eum patrioque mnesarchum eu.',
+					imgUrl: 'img/team-member-3.jpg'
+				},
+				{
+					name: 'Lionel Fusco',
+					occupation: 'Graphic Designer',
+					description: 'Eum cu tantas legere complectitur, hinc utamur ea eam. Eum patrioque mnesarchum eu.',
+					imgUrl: 'img/team-member-4.jpg'
+				},
+			];
+		}
+	};
+});
+
+
+module.controller('ContactsCtrl', function ($scope, $cookies) {
+
+	$scope.field = {
+		name: $cookies.get('userName') || '',
+		mail: $cookies.get('userMail') || '',
+		message: ''
+	};
+
+	$scope.nameRegexp =  /^[a-zA-Z_]+$/;
+    $scope.mailRegexp = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]+$/;
+    $scope.messageRegexp = /^.{20,}/;
+
+    $scope.formWarnings = {
+		name: 'Allowed english alphabet characters only',
+		mail: 'Allowed english alphabet characters, digits, symbols _ and @',
+		message: 'Nessage must be at least 20 characters'
+	};
+
+    $scope.submitHandler = function(data) {
+		$cookies.put('userName', data.name);
+		$cookies.put('userMail', data.mail);
+
+        alert('Form submited');
+    };
+});
+
+
+
+
+module.controller('NewsCtrl', function ($scope, $http, $routeParams) {
+	var config = {
+		transformResponse: appendTransform($http.defaults.transformResponse, function(response) {
+			for (var i = 0; i < response.length; i++) {
+				var a = response[i].date.split('/');
+				response[i].date = new Date( a[2], a[0]-1, a[1]);
+			}
+			return response;
+		})
+	};
+
+	function appendTransform(defaults, transform) {
+		defaults = angular.isArray(defaults) ? defaults : [defaults];
+		return defaults.concat(transform);
+	};
+
+	$http.get('data.json', config).then(function (response) {
+		$scope.news = response.data;
+	}, function (error) {
+		console.log(error);
+		$scope.news = [];
+	});
+
+	$scope.id = $routeParams.id;
+
+	if (angular.isDefined($scope.news)) {
+		for (var i = 0; i < $scope.news.length; i++) {
+			if ($scope.news[i].id == $scope.id) {
+				$scope.singleNews = $scope.news[i];
+				break;
+			}
+		}
+	}
+});
+
+
+module.config(function ($routeProvider, $locationProvider) {
+
+	$routeProvider
+	.when('/index.html', {
+		redirectTo: '/'
+	})
+	.when('/:id', {
+		templateUrl: 'templates/news.html',
+		controller: 'NewsCtrl'
+	})
+	.otherwise({
+		redirectTo: '/'
+	});
+
+	$locationProvider.html5Mode(true);
 });

@@ -1,0 +1,40 @@
+ <ul class="team__list list clearfix">
+    <li class="col-sm-6 col-md-3" ng-repeat='item in team' ng-cloak>
+        <div class="team__item">
+            <a href="#" class="team__member link">
+                <div class="team__image-container">
+                    <img ng-src="{{item.imgUrl}}" alt="Harold Finch" class="img-responsive team__image">
+                    <div class="team__info">
+                        <span class="team__name">{{item.name}}</span>
+                        <span class="team__title">{{item.occupation}}</span>
+                    </div>
+                </div>
+                <p class="team__text">{{item.description}}</p>
+            </a>
+            <div class="social">
+                <ul class="social__list list">
+                    <li class="social__item social__item_bio">
+                        <a href="#" class="social__link social__link_facebook link">
+                            <i class="fa fa-facebook social__icon"></i>
+                        </a>
+                    </li>
+                    <li class="social__item social__item_bio">
+                        <a href="#" class="social__link social__link_twitter link">
+                            <i class="fa fa-twitter social__icon"></i>
+                        </a>
+                    </li>
+                     <li class="social__item social__item_bio">
+                        <a href="#" class="social__link social__link_google link">
+                            <i class="fa fa-google-plus social__icon"></i>
+                        </a>
+                    </li>
+                    <li class="social__item social__item_bio">
+                        <a href="#" class="social__link social__link_dribble link">
+                            <i class="fa fa-dribbble social__icon"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </li>
+</ul>    
