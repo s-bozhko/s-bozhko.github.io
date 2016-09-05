@@ -302,7 +302,7 @@ module.controller('ContactsCtrl', function ($scope, $cookies) {
     $scope.formWarnings = {
 		name: 'Allowed english alphabet characters only',
 		mail: 'Allowed english alphabet characters, digits, symbols _ and @',
-		message: 'Nessage must be at least 20 characters'
+		message: 'Message must be at least 20 characters'
 	};
 
     $scope.submitHandler = function(data) {
