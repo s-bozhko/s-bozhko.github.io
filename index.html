@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ru" ng-app="landing2App">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Landing Template 2</title>
+
+        <base href="/Landing2/public/" />
+        <!-- <base href="/" /> -->
+
+        <link href="https://fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,700,800" rel="stylesheet">
+        <link rel="stylesheet" href="css/bootstrap.css">
+        <link rel="stylesheet" href="css/font-awesome.css">
+        <link rel="stylesheet" href="css/style.css">
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+        <script src="js/angular-smooth-scroll.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-cookies.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-route.js"></script>
+        <script src="js/app.js"></script>
+
+        <!--[if lte IE 9]>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+    </head>
+    <body ng-controller="MainCtrl" on-resize> 
+        <div class="wrapper">
+            <div class="content-wrapper">
+                <header class="header" id="top">
+                    <div class="header__wrapper">
+                        <div class="container"> 
+                            <div class="header__logo">
+                                <a href="/">
+                                    <img src="img/logo.png" alt="Smak">
+                                </a>
+                            </div>
+                            <div class="navbar-header"> 
+                                <button aria-controls="bs-navbar" aria-expanded="false" class="collapsed navbar-toggle" data-target="#bs-navbar" data-toggle="collapse" type="button" ng-click="toogleMenu()"> 
+                                    <span class="sr-only">Toggle navigation</span> 
+                                    <span class="icon-bar"></span> 
+                                    <span class="icon-bar"></span> 
+                                    <span class="icon-bar"></span> 
+                                </button>
+                            </div> 
+                            <nav class="navbar-collapse header__navigation clearfix collapse" ng-class="menuStyle" id="bs-navbar"> 
+                                <ul class="nav navbar-nav navigation list"> 
+                                    <li class="navigation__item"><a href="/" class="navigation__link link navigation__link_active" scroll-to="top">Home</a></li>
+                                    <li class="navigation__item"><a href="#services" class="navigation__link link" scroll-to="services" offset="{{scrollOffset}}">Services</a></li>
+                                    <li class="navigation__item"><a href="#portfolio" class="navigation__link link" scroll-to="portfolio" offset="{{scrollOffset}}">Portfolio</a></li>
+                                    <li class="navigation__item"><a href="#about" class="navigation__link link" scroll-to="about" offset="{{scrollOffset}}">About</a></li>
+                                    <li class="navigation__item"><a href="#news" class="navigation__link link" scroll-to="news" offset="{{scrollOffset}}">News</a></li>
+                                    <li class="navigation__item"><a href="#contacts" class="navigation__link link" scroll-to="contacts" offset="{{scrollOffset}}">Contact</a></li>
+                                </ul>
+                            </nav> 
+                        </div>
+                    </div>
+                </header>
+
+                <div ng-view></div>
+            </div>
+            <footer class="footer">
+                <p class="footer__text"><a href="#top" class="to-top" scroll-to="top"><i class="to-top__icon"></i></a> &copy; 2014 - <a href="#" class="footer__link">Kat</a> All Right Reserved</p>
+            </footer>
+        </div>
+	</body>
+</html>

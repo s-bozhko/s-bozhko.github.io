@@ -1,0 +1,15 @@
+<div class="container" ng-controller="NewsCtrl">
+    <div class="row">
+        <div class="col-sm-10 col-sm-push-1">
+            <div class="news__item single-news single-news_page">
+                <div class="single-news__date single-news__date_page" ng-bind="news[id-1].date | date"></div>
+                <div class="col-sm-10 col-sm-push-1">
+                	<div class="single-news__description single-news__description_page">
+	                    <p class="single-news__text" ng-bind="news[id-1].text"></p>
+	                    <a href="/{{item.id}}" class="single-news__link link">Back</a>
+	                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
