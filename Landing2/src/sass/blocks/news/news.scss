@@ -16,6 +16,12 @@
 	padding-top: 5px;
 	padding-bottom: 3px;
 
+	&_page {
+		padding-top: 20px;
+		padding-bottom: 20px;
+		text-align: center;
+	}
+
 	&__time {
 	
 		text-align: center;
@@ -40,6 +46,13 @@
 		color: $primary-color;
 		font-size: 68px;
 		line-height: 85px;
+
+		&_page {
+			@media (max-width: $break_sm - 1) {
+				font-size: 40px;
+			line-height: 60px;
+			}
+		}
 	}
 
 	&__month {
@@ -63,6 +76,14 @@
 
 		@media (min-width: $break_lg) {
 			width: 69.2%;
+		}
+
+		&_page {
+			border-bottom: none;
+
+			@media (min-width: $break_lg) {
+				width: auto;
+			}
 		}
 	}
 

@@ -7,6 +7,7 @@
         <title>Landing Template 2</title>
 
         <base href="/Landing2/public/" />
+        <!-- <base href="/" /> -->
 
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,700,800" rel="stylesheet">
         <link rel="stylesheet" href="css/bootstrap.css">
@@ -25,256 +26,44 @@
             <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
         <![endif]-->
     </head>
-    <body ng-controller="MainCtrl" on-resize>  
-        <header class="header" id="top">
-            <div class="header__wrapper">
-                <div class="container"> 
-                    <!-- <div class="header__wrapper"> -->
-                        <div class="header__logo">
-                            <a href="#">
-                                <img src="img/logo.png" alt="Smak">
-                            </a>
-                        </div>
-                        <div class="navbar-header"> 
-                            <button aria-controls="bs-navbar" aria-expanded="false" class="collapsed navbar-toggle" data-target="#bs-navbar" data-toggle="collapse" type="button" ng-click="toogleMenu()"> 
-                                <span class="sr-only">Toggle navigation</span> 
-                                <span class="icon-bar"></span> 
-                                <span class="icon-bar"></span> 
-                                <span class="icon-bar"></span> 
-                            </button>
-                        </div> 
-                    <!-- </div> -->
-
-                    <nav class="navbar-collapse header__navigation clearfix collapse" ng-class="menuStyle" id="bs-navbar"> 
-                        <ul class="nav navbar-nav navigation list"> 
-                            <li class="navigation__item"><a href="#" class="navigation__link link navigation__link_active" scroll-to="top">Home</a></li>
-                            <li class="navigation__item"><a href="#services" class="navigation__link link" scroll-to="services" offset="{{scrollOffset}}">Services</a></li>
-                            <li class="navigation__item"><a href="#portfolio" class="navigation__link link" scroll-to="portfolio" offset="{{scrollOffset}}">Portfolio</a></li>
-                            <li class="navigation__item"><a href="#about" class="navigation__link link" scroll-to="about" offset="{{scrollOffset}}">About</a></li>
-                            <li class="navigation__item"><a href="#news" class="navigation__link link" scroll-to="news" offset="{{scrollOffset}}">News</a></li>
-                            <li class="navigation__item"><a href="#contacts" class="navigation__link link" scroll-to="contacts" offset="{{scrollOffset}}">Contact</a></li>
-                        </ul>
-                    </nav> 
-                </div>
-            </div>
-        </header>
-
-        <div class="intro">
-            <div class="container">
-                <div class="intro__container">
-                    <p class="intro__title lead">We make websites</p>
-                    <a href="#" class="btn btn-primary intro__button" scroll-to="portfolio" offset="{{scrollOffset}}">Start tour</a>
-                </div>
-            </div>
-        </div>
-
-        <section id="services">
-            <div class="container service" ng-controller="ServicesCtrl" ng-cloak>
-                <div class="row">
-                    <ul class="service__list">
-                        <li ng-repeat="item in serviceItems" ng-class="{service__item_selected: selectedItem == $index+1}" ng-click="select($index+1)" class="col-xs-6 col-sm-3 service__item">
-                            <div class="service__icon"><i class="icon" ng-class="[item.iconClass]"></i></div>
-                            <h3 class="service__title">{{item.title}}</h3>
-                        </li>       
-                    </ul>
-                </div>
-                <div ng-switch="selectedItem">
-                    <p class="service__text" ng-switch-when="1">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute i rure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                    </p>
-                    <p class="service__text" ng-switch-when="2">Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue.
-                    </p>
-                    <p class="service__text" ng-switch-when="3">Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt.
-                    </p>
-                    <p class="service__text" ng-switch-when="4">Fusce vulputate eleifend sapien. Vestibulum purus quam, scelerisque ut, mollis sed, nonummy id, metus. Nullam accumsan lorem in dui. Cras ultricies mi eu turpis hendrerit fringilla. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; In ac dui quis mi consectetuer lacinia. Nam pretium turpis et arcu. Duis arcu tortor, suscipit eget, imperdiet nec, imperdiet iaculis, ipsum. Sed aliquam ultrices mauris.
-                    </p>
-                </div>
-            </div>
-
-            <div class="service-description gray">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-sm-10 col-sm-push-1">
-                            <div class="btn-group service-description__btn-group clearfix" role="group" aria-label="...">
-                                <button type="button" class="btn service-description__btn">Start tour</button>
-                                <button type="button" class="btn service-description__btn service-description__btn_selected">For all devices</button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-sm-6 service-description__image-container">
-                            <img src="img/phones.png" alt="Phones" class="img-responsive service-description__image">
-                        </div>
-                        <div class="col-sm-6">
-                            <h3 class="service-description__title">Fully Responsive</h3>
-                            <p class="service-description__text">Eum cu tantas legere complectitur, hinc utamur ea eam. Lorem ipsum dolor sit amet, volumus temporibus definitionem id ius, vel ut magna timeam appareat, movet timeam maiorum an ius. <br> Sea libris dictas lucilius et. Ne cibo urbanitas pri, qui ad populo accusamus. Quod congue ea ius, nisl aperiri sit ut.</p>
-                            <a href="#" class="btn btn-primary service-description__button" scroll-to="contacts" offset="{{scrollOffset}}">Get now</a>
-                        </div>  
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="portfolio">
-            <div class="portfolio" ng-controller="PortfolioCtrl" ng-cloak>
-                <div class="container">
-                    <div class="section__heading section__heading_portfolio">
-                        <h1 class="section__title">Our Portfolio</h1>
-                        <div class="divider"><span></span></div>
-                        <div class="row">
-                            <div class="col-sm-8 col-sm-push-2">
-                                <p class="section__description description">Eum cu tantas legere complectitur, hinc utamur ea eam. Eum patrioque mnesarchum eu, diam erant convenire et vis. Et essent evertitur sea, vis cu ubique referrentur, sed eu dicant expetendis.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-12">
-                            <ul class="section__list list clearfix">
-                                <li class="list__item"><a href="#" class="portfolio-category list__link link" ng-class="[categories.all]" ng-click="showMatch('all', $event)">All</a></li>
-                                <li class="list__item"><a href="#" class="portfolio-category list__link link" ng-class="[categories.web]" ng-click="showMatch('web', $event)">Web</a></li>
-                                <li class="list__item"><a href="#" class="portfolio-category list__link link" ng-class="[categories.photography]" ng-click="showMatch('photography', $event)">Photography</a></li>
-                                <li class="list__item"><a href="#" class="portfolio-category list__link link" ng-class="[categories.graphic]" ng-click="showMatch('graphic', $event)">Graphic Design</a></li>
-                                <!-- <li class="list__item"><a href="#" class=" portfolio-category list__link link" data-category="illustration">Illustration</a></li> -->
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="container-fluid">
-                    <div class="row">
-                        <ul class="portfolio__list clearfix" id="portfolioGrid">
-                            <li ng-repeat="item in portfolioItems | filter: itemFilter" class="portfolio__item col-xs-6 col-sm-4 col-md-3 col-lg-2" >
-                                <a href="{{item.link}}" class="portfolio__link">
-                                    <img ng-src="{{item.image}}" class="img-responsive" alt="{{item.alt}}">
-                                    <div class="portfolio__description">
-                                        <h4 class="portfolio__title">{{item.title}}</h4>
-                                        <p class="portfolio__type">{{item.type}}</p>
-                                    </div>
+    <body ng-controller="MainCtrl" on-resize> 
+        <div class="wrapper">
+            <div class="content-wrapper">
+                <header class="header" id="top">
+                    <div class="header__wrapper">
+                        <div class="container"> 
+                            <div class="header__logo">
+                                <a href="/">
+                                    <img src="img/logo.png" alt="Smak">
                                 </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="dark" ng-cloak>
-                <div class="proud-numbers">
-                    <div statistics-dir></div>
-                </div>
-            </div>
-        </section>
-
-        <section id="about">
-            <div class="container">
-                <div class="section__heading section__heading_about">
-                    <h1 class="section__title">We are the one</h1>
-                    <div class="divider"><span></span></div>
-                    <div class="row">
-                        <div class="col-sm-8 col-sm-push-2">
-                            <p class="section__description description">Eum cu tantas legere complectitur, hinc utamur ea eam. Eum patrioque mnesarchum eu, diam erant convenire et vis. Et essent evertitur sea, vis cu ubique referrentur, sed eu dicant expetendis.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div class="team">
-                        <div about-dir></div>
-                    </div>  
-                </div>
-            </div>
-        </section>
-
-        <section id="news" ng-controller="NewsCtrl">
-            <div class="container">
-                <div class="section__heading section__heading_news">
-                    <h1 class="section__title">Check our news</h1>
-                    <div class="divider"><span></span></div>
-                    <div class="row">
-                        <div class="col-sm-8 col-sm-push-2">
-                            <p class="section__description description">Eum cu tantas legere complectitur, hinc utamur ea eam. Eum patrioque mnesarchum eu, diam erant convenire et vis. Et essent evertitur sea, vis cu ubique referrentur, sed eu dicant expetendis.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="news">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-sm-10 col-sm-push-1">
-                            <div class="news__item single-news" ng-repeat="item in news | orderBy:'date':'reverse'">
-                                <div class="single-news__time">
-                                    <div class="single-news__date" ng-bind="item.date | date:'dd'"></div>
-                                    <div class="single-news__month" ng-bind="item.date | date:'MMMM'"></div>
-                                </div>
-                                <div class="single-news__description">
-                                    <p class="single-news__text" ng-bind="item.text"></p>
-                                    <a href="/{{item.id}}" class="single-news__link link">Read More</a>
-                                </div>
                             </div>
+                            <div class="navbar-header"> 
+                                <button aria-controls="bs-navbar" aria-expanded="false" class="collapsed navbar-toggle" data-target="#bs-navbar" data-toggle="collapse" type="button" ng-click="toogleMenu()"> 
+                                    <span class="sr-only">Toggle navigation</span> 
+                                    <span class="icon-bar"></span> 
+                                    <span class="icon-bar"></span> 
+                                    <span class="icon-bar"></span> 
+                                </button>
+                            </div> 
+                            <nav class="navbar-collapse header__navigation clearfix collapse" ng-class="menuStyle" id="bs-navbar"> 
+                                <ul class="nav navbar-nav navigation list"> 
+                                    <li class="navigation__item"><a href="/" class="navigation__link link navigation__link_active" scroll-to="top">Home</a></li>
+                                    <li class="navigation__item"><a href="#services" class="navigation__link link" scroll-to="services" offset="{{scrollOffset}}">Services</a></li>
+                                    <li class="navigation__item"><a href="#portfolio" class="navigation__link link" scroll-to="portfolio" offset="{{scrollOffset}}">Portfolio</a></li>
+                                    <li class="navigation__item"><a href="#about" class="navigation__link link" scroll-to="about" offset="{{scrollOffset}}">About</a></li>
+                                    <li class="navigation__item"><a href="#news" class="navigation__link link" scroll-to="news" offset="{{scrollOffset}}">News</a></li>
+                                    <li class="navigation__item"><a href="#contacts" class="navigation__link link" scroll-to="contacts" offset="{{scrollOffset}}">Contact</a></li>
+                                </ul>
+                            </nav> 
                         </div>
                     </div>
-                </div>
+                </header>
 
                 <div ng-view></div>
             </div>
-        </section>
-
-        <section id="contacts" class="dark">
-            <div class="container">
-                <div class="section__heading section__heading_contact">
-                    <h1 class="section__title section__title_white">Contact Us</h1>
-                    <div class="divider"><span></span></div>
-                    <div class="row">
-                        <div class="col-sm-8 col-sm-push-2">
-                            <p class="section__description section__description_white description">Eum cu tantas legere complectitur, hinc utamur ea eam. Eum patrioque mnesarchum eu, diam erant convenire et vis. Et essent evertitur sea, vis cu ubique referrentur, sed eu dicant expetendis.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="contact" ng-controller="ContactsCtrl">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-sm-12 col-md-10 col-md-push-1 col-lg-8 col-lg-push-2">
-                            <form class="form-horizontal form" name="form" ng-submit="submitHandler(field)" novalidate>
-                                <div class="form-group">
-                                    <div class="col-sm-6">
-                                        <div class="form__wrapper">
-                                            <input type="text" name="fieldName" class="form__input form-control" placeholder="Your name here" ng-model="field.name" ng-pattern="nameRegexp" required>
-                                            <span class="form__warning-text" ng-if="form.fieldName.$invalid && form.fieldName.$dirty">{{formWarnings.name}}</span>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-6">
-                                        <div class="form__wrapper">
-                                            <input type="mail" name="fieldMail" class="form__input form-control" placeholder="Your mail here" ng-model="field.mail" ng-pattern="mailRegexp" required>
-                                            <span class="form__warning-text" ng-if='form.fieldMail.$invalid && form.fieldMail.$dirty'>{{formWarnings.mail}}</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <div class="col-sm-12">
-                                        <div class="form__wrapper form__message">
-                                            <input type="text" name="fieldMessage" class="form__input form-control" placeholder="Your message here" ng-model="field.message" ng-pattern="messageRegexp" required>
-                                            <span class="form__warning-text" ng-if='form.fieldMessage.$invalid && form.fieldMessage.$dirty'>{{formWarnings.message}}</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="form__commands">
-                                    <input type="submit" class="btn btn-primary form__submit" value="Send Message" ng-disabled="form.$invalid"/>
-                                </div>
-                            </form>
-                        </div>    
-                    </div>
-                </div>
-            </div>
-            <div class="map">
-                <div class="map-tooltip">
-                    <p class="map-tooltip__text">Awesome Address 432</p>
-                    <a href="mailto:ourmail@sometype.com" class="map-tooltip__text">ourmail@sometype.com</a>
-                    <a href="tel:+321032123343492" class="map-tooltip__text">+321(0)32 123 343 492</a>
-                </div>
-            </div>
-        </section>
-
-        <footer class="footer">
-            <p class="footer__text"><a href="#top" class="to-top" scroll-to="top"><i class="to-top__icon"></i></a> &copy; 2014 - <a href="#" class="footer__link">Kat</a> All Right Reserved</p>
-        </footer>
+            <footer class="footer">
+                <p class="footer__text"><a href="#top" class="to-top" scroll-to="top"><i class="to-top__icon"></i></a> &copy; 2014 - <a href="#" class="footer__link">Kat</a> All Right Reserved</p>
+            </footer>
+        </div>
 	</body>
 </html>

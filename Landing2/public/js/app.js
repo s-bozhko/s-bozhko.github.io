@@ -29,6 +29,7 @@ module.directive('onResize', ['$window', function($window) {
 
             angular.element($window).bind('resize', function() {
                 scope.onResize();
+                scope.$digest();
             });
         }
     };
@@ -74,8 +75,6 @@ module.controller('PortfolioCtrl', function ($scope) {
 	}
 
 	$scope.showMatch = function (type, event) {
-
-		console.log(event);
 
         event.preventDefault();
 
@@ -341,23 +340,14 @@ module.controller('NewsCtrl', function ($scope, $http, $routeParams) {
 	});
 
 	$scope.id = $routeParams.id;
-
-	if (angular.isDefined($scope.news)) {
-		for (var i = 0; i < $scope.news.length; i++) {
-			if ($scope.news[i].id == $scope.id) {
-				$scope.singleNews = $scope.news[i];
-				break;
-			}
-		}
-	}
 });
 
 
 module.config(function ($routeProvider, $locationProvider) {
 
 	$routeProvider
-	.when('/index.html', {
-		redirectTo: '/'
+	.when('/', {
+		templateUrl: 'templates/page.html'
 	})
 	.when('/:id', {
 		templateUrl: 'templates/news.html',
