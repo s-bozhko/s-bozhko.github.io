@@ -1,0 +1,162 @@
+// /********************************************
+//                  WORk
+// ********************************************/
+.work {
+	
+	padding-bottom: 145px;
+
+	background-color: #f8fcfe;
+
+	&__categories {
+		list-style-type: none;
+		margin: 0 0 70px;
+		padding: 0;
+		font-size: 0;
+		text-align: center;
+	}
+
+	&__category {
+		display: block;
+		margin-left: -1px;
+
+		border-top: 2px solid transparent;
+
+		transition: all 0.3s;
+
+		&:hover,
+		&_selected {
+			border-top: 2px solid $text-secondary;
+		}
+
+		&:active,
+		&:focus {
+			border-top: 2px solid darken($secondary-color, 20%);
+		}
+
+		@media (min-width: $break_sm) {
+			display: inline-block;
+		}
+	}
+
+	&__category-link {
+		display: block;
+		padding: 20px 21px 18px;
+		border: 1px solid #ebebeb;
+
+		background-color: $white;
+
+		color: $text-main;
+		font-size: 14px;
+		line-height: 18px;
+
+
+		&:hover,
+		&_selected {
+			color: $text-secondary;
+			text-decoration: none;
+		}
+
+		&:active,
+		&:focus {
+			color: darken($secondary-color, 20%);
+			text-decoration: none;
+		}
+	}
+	
+}
+
+
+.portfolio {
+
+	&__list {
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+	}
+
+	&__item {
+		position: relative;
+		padding: 0;
+		font-size: 0;
+	}
+
+	&__link {
+
+		display: inline-block;
+
+		&:hover {
+			div {
+				opacity: 1;
+			}
+		}
+	}
+
+	&__description {
+		opacity: 0;
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+
+		padding: 16% 10px;
+
+		border-top: 3px solid $text-secondary;
+		background-color: rgba(248, 252, 254, 0.9);
+		color: #fff;
+
+		text-align: center;	
+
+		transition: all 0.3s;
+
+		// @media (min-width: 360px) {
+		// 	padding-top: 18%;
+		// }
+
+		// @media (min-width: 480px) {
+		// 	padding-top: 24%;
+		// }
+
+		// @media (min-width: $break_sm) {
+		// 	padding-top: 24%;
+		// }
+	}
+
+	&__share-link {
+		display: inline-block;
+		width: 41px;
+		height: 40px;
+		margin: 0 3px;
+
+		border: 1px solid $text-secondary;
+		border-radius: 50%;
+		background-color: $text-secondary;
+
+		color: $text-reverse;
+		font-size: 14px;
+		line-height: 36px;
+
+		transition: background-color 0.3s, color 0.3s;
+
+		&:hover {
+			background-color: #f8fcfe;
+			color: $text-secondary;
+		}
+	}
+
+	&__title {
+		margin: 30px 0 0;
+		color: $text-secondary;
+		font-size: 14px;
+		line-height: 18px;
+		font-weight: $weight-bold;
+		text-transform: uppercase;
+	}
+
+	&__type {
+		margin: 7px 0 0;
+		color: $text-main;
+		font-size: 12px;
+		line-height: 16px;
+	}
+}

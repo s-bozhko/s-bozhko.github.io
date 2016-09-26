@@ -1,0 +1,108 @@
+// /********************************************
+// 				 NEWs
+// ********************************************/
+
+.news {
+
+	padding-bottom: 134px;
+	
+	&__list {
+		list-style-type: none;
+		margin-top: 0;
+		margin-bottom: 0;
+		padding: 0;
+	}
+
+	&__item {
+		max-width: 500px;
+		margin: 0 auto;
+	}
+
+	&__link {
+		position: relative;
+		display: block;
+		margin-bottom: 30px;
+
+		color: #717171;
+
+		&:hover {
+			color: $text-secondary;
+			text-decoration: none;
+
+			.news__date {
+				border: 1px solid rgba(24, 207, 171, 0.8);
+				background-color: $text-secondary;
+			}
+		}
+	}
+
+	&__image {
+		display: block;
+		width: 100%;
+		border: 1px solid #ececec;
+	}
+
+	&__title {
+		margin: 0;
+		padding: 20px 15px 25px;
+		border: 1px solid #ebebeb;
+		background-color: #f8fcfe;
+		
+		font-size: 18px;
+		line-height: 24px;
+		font-weight: $weight-bold;
+		text-align: center;
+	}
+
+	&__date {
+		position: absolute;
+		top: 0;
+		right: 0;
+		width: 68px;
+		height: 66px;
+		padding: 8px 14px;
+		border: 1px solid rgba(32, 62, 56, 0.8);
+		background-color: #203e38;
+
+		color: $text-reverse;
+		font-size: 16px;
+		line-height: 20px;
+		text-align: center;
+
+		transition: all 0.3s;
+	}
+
+	&__btn-container {
+		padding-top: 53px;
+		text-align: center;
+	}
+
+	&__btn {
+		display: inline-block;
+        width: 165px;
+        padding: 20px 20px 18px;
+        border-radius: 4px;
+
+        background-color: $secondary-color;
+        color: $text-reverse;
+        
+        font-size: 14px;
+        font-weight: $weight-bold;
+        text-transform: uppercase;
+        text-decoration: none;
+
+        transition: all 0.3s;
+
+		&:hover {
+            border-color: #fff;
+			background-color: $primary-color;
+			color: #fff;
+            text-decoration: none;
+		}
+	}
+
+	&__btn-icon {
+		display: inline-block;
+		margin-right: 10px;
+	}
+}	

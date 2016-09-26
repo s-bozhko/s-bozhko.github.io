@@ -1,0 +1,27 @@
+// ----------------------
+// == Normalize
+// ----------------------
+@import "normalize/variables";
+@import "normalize/normalize-mixin";
+@import "normalize/vertical-rhythm";
+@include normalize();
+
+// ----------------------
+// == Base styles
+// ----------------------
+
+.container {
+  // @include bp($tablet-md-min, $tablet-max) {
+  //   @include outer-container($container-md-small);
+  // }
+
+  // @include bp(min, $desktop-sm-min) {
+  //   @include outer-container($container-md);
+  // }
+
+  // @include bp(min, $desktop-lg-min) {
+  //   @include outer-container($container-lg);
+  // }
+}
+
+

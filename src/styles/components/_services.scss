@@ -1,0 +1,91 @@
+// /********************************************
+//                  SERVICES
+// ********************************************/
+.services {
+
+	padding-bottom: 155px;
+
+	&__list {
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+	}
+
+	&__tab {
+		padding: 0;
+		text-align: center;
+	}
+
+	&__link {
+		position: relative;
+		display: block;
+		padding: 24px 10px 26px;
+		border: 1px solid #ebebeb;
+		background-color: #f8fcfe;
+		color: $text-main;
+		font-size: 16px;
+		line-height: 20px;
+
+		transition: all 0.3s ease-out;
+
+		&_active {
+			border: 1px solid $secondary-color;
+			background-color: $secondary-color;
+			color: $text-reverse;
+
+			&:after {
+				content: "";
+			    width: 0;
+			    height: 0;
+			    position: absolute;
+			    top: 100%;
+			    left: 50%;
+			    margin: -1px 0 0 -12px;
+			    pointer-events: none;
+			    border-top-width: 12px;
+			    border-left-width: 12px;
+			    border-right-width: 12px;
+			    border-color: $secondary-color transparent transparent;
+			    border-image: none;
+			    border-style: solid;
+			}
+		}
+
+		&:hover {
+			background-color: $secondary-color;
+			color: $text-reverse;
+			text-decoration: none;
+		}
+
+		&:active,
+		&:focus {
+			background-color: darken($secondary-color, 20%);
+			text-decoration: none;
+			color: $text-reverse;
+		}
+	}
+
+
+	&__item {
+		margin-top: 23px;
+	}
+
+	&__image {
+		display: inline-block;
+		width: 100%;
+		margin-top: 3px;
+	}
+
+	&__description {
+		margin: 15px 0 0;
+		
+		color: $text-main;
+		font-size: 13px;
+		line-height: 24px;
+
+		@media (min-width: $break_sm) {
+			margin: 0;
+			padding-left: 8px;
+		}
+	}
+}

@@ -1,0 +1,69 @@
+// /********************************************
+//                  HEADER
+// ********************************************/
+
+.header {
+	width: 100%;
+	height: 60px;
+
+	margin: 0;
+	border-radius: 0;
+	background-color: #fff;
+
+	@media (min-width: $break_sm) {
+		height: 120px;
+	}
+
+	&__wrapper {
+		position: fixed;
+		left: 0;
+		right: 0;
+		z-index: 300;
+
+		padding: 5px 0;
+        // border-bottom: 1px solid #c8cdce;
+		background-color: #44433e;
+
+        transition: all 0.5s;
+
+		@media (min-width: $break_sm) {
+			padding: 0;
+		}
+
+		&_scrolled {
+			background-color: rgba(230, 230, 230, 0.95);
+			
+			@media (min-width: $break_sm) {
+
+				.header__logo {
+					margin-top: 20px;
+				}
+
+				.navigation .navigation__link {
+					padding: 25px 0;
+				}
+			}
+		}
+	}
+
+	&__logo {
+		float: left;
+
+		@media (min-width: $break_sm) {
+			margin-top: 28px;
+		}
+	}
+
+	&__navigation {
+		margin-top: 5px;
+		padding: 0;
+        border-top: 1px solid $text-main;
+
+		@media (min-width: $break_sm) {
+			float: right;
+			margin-top: 0;
+			padding-right: 20px;
+            border-top: none;
+		}
+	}
+}

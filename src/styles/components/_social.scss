@@ -1,0 +1,75 @@
+// /********************************************
+// 				SOCIAL
+// ********************************************/
+
+.social {
+	text-align: left;
+
+	&__list {
+		padding: 0;
+		font-size: 0;
+
+		&_footer {
+			padding: 8px 0;
+		}
+	}
+
+	&__item {
+		display: inline-block;
+		width: 25%;
+
+		border-top: 1px solid #c1f2e9;
+		border-left: 1px solid #c1f2e9;
+
+		&:first-child {
+			border-left: none;
+		}
+	}
+
+	&__link {
+		display: inline-block;
+		width: 100%;
+		height: 65px;
+	
+		background-color: #2e4a5b;
+		color: $text-reverse;
+
+		line-height: 65px;
+		text-align: center;
+
+		transition: all 0.5s;
+
+		&:hover {
+			color: #fff;
+		}
+
+		&.social__link_facebook {
+			&:hover{
+				background-color: #36609e;
+			}
+		}
+
+		&.social__link_twitter {
+			&:hover{
+				background-color: #2ca9e1;
+			}
+		}
+
+		&.social__link_skype {
+			&:hover{
+				background-color: #3E9DD7;
+			}
+		}
+
+		&.social__link_vimeo {
+			&:hover{
+				background-color: #1ab7ea;
+			}
+		}
+	}
+
+	&__icon {
+		font-size: 24px;
+		vertical-align: middle;
+	}	
+}

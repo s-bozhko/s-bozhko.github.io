@@ -1,0 +1,41 @@
+// /********************************************
+// 	                  INTRO
+// ********************************************/
+
+.intro {
+	width: 100%;
+	padding: 60px 0;
+	background: url('../images/bg.jpg') center center no-repeat;
+	background-size: cover;
+
+	@media (min-width: $break_sm) {
+		height: 892px;
+		padding: 228px 0;
+	}
+
+	&__container {
+		text-align: center;
+	}
+
+	&__title {
+		margin: 5px auto;
+		font-size: 48px;
+		line-height: 76px;
+		font-weight: $weight-light;
+		text-transform: uppercase;
+		text-align: center;
+		color: #fff;
+
+		@media (min-width: $break_sm) {
+			font-size: 60px;
+		}
+	}
+
+	&__button {
+		margin-top: 17px;
+
+		transition: all 0.3s;
+	}
+}
+
+

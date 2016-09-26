@@ -1,0 +1,102 @@
+// /********************************************
+//                  FEEDBACK
+// ********************************************/
+.feedback {
+	
+	padding-bottom: 118px;
+
+	background-color: #f8fcfe;
+
+
+	&__box {
+		max-width: 1190px;
+		min-height: 615px;
+		margin: 0 auto 70px;
+		padding: 33px 35px 30px;
+
+		border: 2px solid #b8c6c7;
+		box-shadow: 0px 0px 8px 1px rgba(184,198,199,0.78);
+
+		background-color: $white;
+	}
+
+	&__heading {
+		padding: 9px 12px 7px;
+	}
+
+	&__title {
+		font-size: 18px;
+		line-height: 24px;
+	}
+
+	&__message {
+		padding: 18px 16px 14px;;
+		font-size: 14px;
+		line-height: 18px;
+		letter-spacing: -0.2px;
+	}
+
+
+	&__input,
+	&__textarea {
+		display: block;
+		width: 100%;
+		border: 2px solid #d6e3e3;
+
+		color: #90aebd;
+
+		font-size: 24px;
+		line-height: 30px;
+	}
+
+	&__input {
+		margin-bottom: 7px;
+		padding: 20px 20px 20px;
+	}
+
+	&__textarea {
+		resize: none;
+		padding: 10px 15px 2px;
+	}
+
+
+	&__controls {
+		padding-top: 20px;
+		text-align: center;
+
+		@media (min-width: $break_sm) {
+			padding-top: 40px;
+			padding-left: 40px;
+		}
+	}
+
+	&__action-text {
+		margin-bottom: 27px;
+		font-size: 36px;
+		line-height: 44px;
+	}
+
+	&__btn {
+		display: inline-block;
+        width: 190px;
+        padding: 20px 20px 18px;
+        border-radius: 4px;
+
+        background-color: $secondary-color;
+        color: $text-reverse;
+        
+        font-size: 14px;
+        font-weight: $weight-bold;
+        text-transform: uppercase;
+        text-decoration: none;
+
+        transition: all 0.3s;
+
+		&:hover {
+            border-color: #fff;
+			background-color: $primary-color;
+			color: #fff;
+            text-decoration: none;
+		}
+	}
+}

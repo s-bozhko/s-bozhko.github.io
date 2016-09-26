@@ -1,31 +1,23 @@
 <!DOCTYPE html>
-<html lang="ru" ng-app="landing2App">
+<html lang="ru">
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Landing Template 2</title>
+        <title>Landing Template 3</title>
 
-        <base href="/" />
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+        <link rel="stylesheet" href="build/styles/font-awesome.css">
+        <link rel="stylesheet" href="build/styles/style.css">
 
-        <link href="https://fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,700,800" rel="stylesheet">
-        <link rel="stylesheet" href="css/bootstrap.css">
-        <link rel="stylesheet" href="css/font-awesome.css">
-        <link rel="stylesheet" href="css/style.css">
-
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
-        <script src="js/angular-smooth-scroll.js"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-cookies.js"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-route.js"></script>
-        <script src="js/app.js"></script>
-
+        <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script> -->
+        
         <!--[if lte IE 9]>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
         <![endif]-->
     </head>
-    <body ng-controller="MainCtrl" on-resize> 
+    <body> 
         <div class="wrapper">
             <div class="content-wrapper">
                 <header class="header" id="top">
@@ -33,36 +25,770 @@
                         <div class="container"> 
                             <div class="header__logo">
                                 <a href="/">
-                                    <img src="img/logo.png" alt="Smak">
+                                    <img src="build/images/logo.png" alt="Smak">
                                 </a>
                             </div>
                             <div class="navbar-header"> 
-                                <button aria-controls="bs-navbar" aria-expanded="false" class="collapsed navbar-toggle" data-target="#bs-navbar" data-toggle="collapse" type="button" ng-click="toogleMenu()"> 
+                                <button aria-controls="bs-navbar" aria-expanded="false" class="collapsed navbar-toggle" data-target="#bs-navbar" data-toggle="collapse" type="button"> 
                                     <span class="sr-only">Toggle navigation</span> 
                                     <span class="icon-bar"></span> 
                                     <span class="icon-bar"></span> 
                                     <span class="icon-bar"></span> 
                                 </button>
                             </div> 
-                            <nav class="navbar-collapse header__navigation clearfix collapse" ng-class="menuStyle" id="bs-navbar"> 
+                            <nav class="navbar-collapse header__navigation clearfix collapse" id="bs-navbar"> 
                                 <ul class="nav navbar-nav navigation list"> 
-                                    <li class="navigation__item"><a href="/" class="navigation__link link navigation__link_active" scroll-to="top">Home</a></li>
-                                    <li class="navigation__item"><a href="#services" class="navigation__link link" scroll-to="services" offset="{{scrollOffset}}">Services</a></li>
-                                    <li class="navigation__item"><a href="#portfolio" class="navigation__link link" scroll-to="portfolio" offset="{{scrollOffset}}">Portfolio</a></li>
-                                    <li class="navigation__item"><a href="#about" class="navigation__link link" scroll-to="about" offset="{{scrollOffset}}">About</a></li>
-                                    <li class="navigation__item"><a href="#news" class="navigation__link link" scroll-to="news" offset="{{scrollOffset}}">News</a></li>
-                                    <li class="navigation__item"><a href="#contacts" class="navigation__link link" scroll-to="contacts" offset="{{scrollOffset}}">Contact</a></li>
+                                    <li class="navigation__item"><a href="#" class="navigation__link link navigation__link_active">Home</a></li>
+                                    <li class="navigation__item"><a href="#about" class="navigation__link link">About</a></li>
+                                    <li class="navigation__item"><a href="#service" class="navigation__link link">Service</a></li>
+                                    <li class="navigation__item"><a href="#work" class="navigation__link link">Work</a></li>
+                                    <li class="navigation__item"><a href="#testimonial" class="navigation__link link">Testimonial</a></li>
+                                    <li class="navigation__item"><a href="#blog" class="navigation__link link">Blog</a></li>
+                                    <li class="navigation__item"><a href="#team" class="navigation__link link">Team</a></li>
+                                    <li class="navigation__item"><a href="#contact" class="navigation__link link">Contact</a></li>
                                 </ul>
                             </nav> 
                         </div>
                     </div>
                 </header>
 
-                <div ng-view></div>
+                <section class="intro">
+                    <div class="intro__slider slider">
+                        <div class="container">
+                            <div class="slider__wrapper">
+                                <div class="slider__viewport">
+                                    <ul class="slider__slider-list list clearfix">
+                                        <li class="slider__item clearfix">
+                                            <p class="slider__subtitle">The Ham is <span class="highlight">a PSD template</span></p>
+                                            <h1 class="slider__title">We are creative</h1>
+                                            <p class="slider__description">Nam varius accumsan elementum aliquam</p>
+
+                                            <div class="slider__btn-container">
+                                                <a href="#" class="slider__btn">Explore now</a>
+                                                <a href="#" class="slider__btn slider__btn_blue">Purchase now</a>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="slider__controls">
+                            <div class="slider__controls-direction">
+                                <a class="slider__control slider__control-prev" href="#"><i class="fa fa-angle-left"></i></a>
+                                <a class="slider__control slider__control-next" href="#"><i class="fa fa-angle-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="about" class="about">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-sm-3 no-padding">
+                                <div class="about__item">
+                                    <i class="about__icon about__icon_touch"></i>
+                                    <h3 class="about__title">Personalized options</h3> 
+                                </div>
+                            </div>
+                            <div class="col-sm-3 no-padding">
+                                <div class="about__item about__item_reverse">
+                                    <i class="about__icon about__icon_diamond"></i>
+                                    <h3 class="about__title">Fully customizable</h3> 
+                                </div>
+                            </div>
+                            <div class="col-sm-3 no-padding">
+                                <div class="about__item">
+                                    <i class="about__icon about__icon_lamp"></i>
+                                    <h3 class="about__title">Unlimited support</h3> 
+                                </div>
+                            </div>
+                            <div class="col-sm-3 no-padding">
+                                <div class="about__item about__item_reverse">
+                                    <i class="about__icon about__icon_devices"></i>
+                                    <h3 class="about__title">Responsive all device</h3> 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="services" class="services">
+                    <div class="container">
+                        <div class="section__heading section__heading_services">
+                            <h2 class="section__title">Our Services</h2>
+                            <div class="divider"><i class="divider__image"></i></div>
+                        </div>
+
+                        <ul class="services__list clearfix">
+                            <li class="col-sm-2 services__tab"><a href="#" class="services__link services__link_active">Web Design</a></li>
+                            <li class="col-sm-2 services__tab"><a href="#" class="services__link">Graphic Design</a></li>
+                            <li class="col-sm-2 services__tab"><a href="#" class="services__link">Online Support</a></li>
+                            <li class="col-sm-2 services__tab"><a href="#" class="services__link">App Design</a></li>
+                            <li class="col-sm-2 services__tab"><a href="#" class="services__link">Online Marketing</a></li>
+                            <li class="col-sm-2 services__tab"><a href="#" class="services__link">Seo Service</a></li>
+                        </ul>
+
+                        <div class="services__item">
+                            <div class="col-sm-2 no-padding">
+                                <img src="build/images/service-img.jpg" alt="Service 1" class="services__image img-responsive">
+                            </div>
+                            <div class="col-sm-10">
+                                <p class="services__description">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adip isicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="company" class="company">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-sm-6 company__image-container">
+                                <img src="build/images/company.jpg" alt="Company" class="company__image img-responsive">
+                            </div>
+
+                            <div class="col-sm-6 company__heading">
+                                <div class="section__heading section__heading_company">
+                                    <h2 class="section__title section__title_white">About Our Company</h2>
+                                    <div class="divider"><i class="divider__image"></i></div>
+                                </div>
+
+                                <div class="company__stats">
+                                    <a href="#" class="company__stats-link">Our history</a>
+                                    <a href="#" class="company__stats-link">Our biography </a>
+                                    <a href="#" class="company__stats-link company__stats-link_selected">Our skills</a>
+                                </div>
+
+                                <div class="company__details">
+                                    <div class="company__info company__info_history">
+                                        <p class="company__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incid idunt ut labore et dolore magna aliqua. <br /> Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+                                        <ul class="company__benefits-list">
+                                            <li class="company__benefits-item">Excepteur sint occaecat sint.</li>
+                                            <li class="company__benefits-item">Excepteur sint occaecat sint.</li>
+                                            <li class="company__benefits-item">Excepteur sint occaecat sint.</li>
+                                            <li class="company__benefits-item">Excepteur sint occaecat sint.</li>
+                                            <li class="company__benefits-item">Excepteur sint occaecat sint.</li>
+                                            <li class="company__benefits-item">Excepteur sint occaecat sint.</li>
+                                            <li class="company__benefits-item">Excepteur sint occaecat sint.</li>
+                                            <li class="company__benefits-item">Excepteur sint occaecat sint.</li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="company__info company__info_bio">
+                                        <p class="company__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec odio ipsum Suspendisse cursus malesuada facilisis. Nunc con sectetur odio sed dolor tincidunt porttitor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vesti- bu lum nec odio ipsum. Sus pendisse cursus malesua da facilisis. Vestibulum nec odio ipsum.</p>
+                                        <p class="company__text company__text_additional">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec odio ipsum Suspendisse cursus malesuada facilisis. Nunc con sectetur odio sed dolor.</p>
+                                    </div>
+
+                                    <div class="company__info company__info_skills">
+                                        <div class="company__skillbar-wrapper">
+                                            <div class="company__skillbar company__skillbar_ui">
+                                               <span class="company__skillbar-text">User Interface</span> 
+                                            </div>
+                                        </div>
+                                        <div class="company__skillbar-wrapper">
+                                            <div class="company__skillbar company__skillbar_webdes">
+                                               <span class="company__skillbar-text">Web Design</span> 
+                                            </div>
+                                        </div>
+                                         <div class="company__skillbar-wrapper">
+                                            <div class="company__skillbar company__skillbar_wp">
+                                               <span class="company__skillbar-text">Wordpress</span> 
+                                            </div>
+                                        </div>
+                                         <div class="company__skillbar-wrapper">
+                                            <div class="company__skillbar company__skillbar_html">
+                                               <span class="company__skillbar-text">HTML &amp; CSS</span> 
+                                            </div>
+                                        </div>
+                                         <div class="company__skillbar-wrapper">
+                                            <div class="company__skillbar company__skillbar_appdes">
+                                               <span class="company__skillbar-text">App Design</span> 
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="work" class="work">
+                    <div class="container">
+                        <div class="section__heading section__heading_work">
+                            <h2 class="section__title">Our Amazing Work</h2>
+                            <div class="divider"><i class="divider__image"></i></div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <ul class="work__categories clearfix">
+                                    <li class="work__category work__category_selected"><a href="#" class="work__category-link work__category-link_selected">All</a></li>
+                                    <li class="work__category"><a href="#" class="work__category-link">Graphic Design</a></li>
+                                    <li class="work__category"><a href="#" class="work__category-link">Web Design </a></li>
+                                    <li class="work__category"><a href="#" class="work__category-link">Landing Pages</a></li>
+                                    <li class="work__category"><a href="#" class="work__category-link">Wordpress</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <ul class="portfolio__list clearfix">
+                                    <li class="portfolio__item col-sm-4 col-md-3">
+                                        <a href="#" class="portfolio__link">
+                                            <img src="build/images/port-1.jpg" class="img-responsive" alt="Image 1">
+                                            <div class="portfolio__description">
+                                                <i class="portfolio__share-link fa fa-link"></i>
+                                                <i class="portfolio__share-link fa fa-search"></i>
+
+                                                <h3 class="portfolio__title">Creative design</h3>
+                                                <p class="portfolio__type">Web Design</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="portfolio__item col-sm-4 col-md-3">
+                                        <a href="#" class="portfolio__link">
+                                            <img src="build/images/port-2.jpg" class="img-responsive" alt="Image 2">
+                                            <div class="portfolio__description">
+                                                <i class="portfolio__share-link fa fa-link"></i>
+                                                <i class="portfolio__share-link fa fa-search"></i>
+
+                                                <h3 class="portfolio__title">Creative design</h3>
+                                                <p class="portfolio__type">Web Design</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="portfolio__item col-sm-4 col-md-3">
+                                        <a href="#" class="portfolio__link">
+                                            <img src="build/images/port-4.jpg" class="img-responsive" alt="Image 3">
+                                            <div class="portfolio__description">
+                                                <i class="portfolio__share-link fa fa-link"></i>
+                                                <i class="portfolio__share-link fa fa-search"></i>
+
+                                                <h3 class="portfolio__title">Creative design</h3>
+                                                <p class="portfolio__type">Web Design</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="portfolio__item col-sm-4 col-md-3">
+                                        <a href="#" class="portfolio__link">
+                                            <img src="build/images/port-3.jpg" class="img-responsive" alt="Image 4">
+                                            <div class="portfolio__description">
+                                                <i class="portfolio__share-link fa fa-link"></i>
+                                                <i class="portfolio__share-link fa fa-search"></i>
+
+                                                <h3 class="portfolio__title">Creative design</h3>
+                                                <p class="portfolio__type">Web Design</p>
+                                            </div>
+                                        </a>
+                                    </li>
+
+
+
+                                    <li class="portfolio__item col-sm-4 col-md-3">
+                                        <a href="#" class="portfolio__link">
+                                            <img src="build/images/port-5.jpg" class="img-responsive" alt="Image 5">
+                                            <div class="portfolio__description">
+                                                <i class="portfolio__share-link fa fa-link"></i>
+                                                <i class="portfolio__share-link fa fa-search"></i>
+
+                                                <h3 class="portfolio__title">Creative design</h3>
+                                                <p class="portfolio__type">Web Design</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="portfolio__item col-sm-4 col-md-3">
+                                        <a href="#" class="portfolio__link">
+                                            <img src="build/images/port-6.jpg" class="img-responsive" alt="Image 6">
+                                            <div class="portfolio__description">
+                                                <i class="portfolio__share-link fa fa-link"></i>
+                                                <i class="portfolio__share-link fa fa-search"></i>
+
+                                                <h3 class="portfolio__title">Creative design</h3>
+                                                <p class="portfolio__type">Web Design</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="portfolio__item col-sm-4 col-md-3">
+                                        <a href="#" class="portfolio__link">
+                                            <img src="build/images/port-7.jpg" class="img-responsive" alt="Image 7">
+                                            <div class="portfolio__description">
+                                                <i class="portfolio__share-link fa fa-link"></i>
+                                                <i class="portfolio__share-link fa fa-search"></i>
+
+                                                <h3 class="portfolio__title">Creative design</h3>
+                                                <p class="portfolio__type">Web Design</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="portfolio__item col-sm-4 col-md-3">
+                                        <a href="#" class="portfolio__link">
+                                            <img src="build/images/port-8.jpg" class="img-responsive" alt="Image 8">
+                                            <div class="portfolio__description">
+                                                <i class="portfolio__share-link fa fa-link"></i>
+                                                <i class="portfolio__share-link fa fa-search"></i>
+
+                                                <h3 class="portfolio__title">Creative design</h3>
+                                                <p class="portfolio__type">Web Design</p>
+                                            </div>
+                                        </a>
+                                    </li>
+
+
+
+                                    <li class="portfolio__item col-sm-4 col-md-3">
+                                        <a href="#" class="portfolio__link">
+                                            <img src="build/images/port-9.jpg" class="img-responsive" alt="Image 9">
+                                            <div class="portfolio__description">
+                                                <i class="portfolio__share-link fa fa-link"></i>
+                                                <i class="portfolio__share-link fa fa-search"></i>
+
+                                                <h3 class="portfolio__title">Creative design</h3>
+                                                <p class="portfolio__type">Web Design</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="portfolio__item col-sm-4 col-md-3">
+                                        <a href="#" class="portfolio__link">
+                                            <img src="build/images/port-10.jpg" class="img-responsive" alt="Image 10">
+                                            <div class="portfolio__description">
+                                                <i class="portfolio__share-link fa fa-link"></i>
+                                                <i class="portfolio__share-link fa fa-search"></i>
+
+                                                <h3 class="portfolio__title">Creative design</h3>
+                                                <p class="portfolio__type">Web Design</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="portfolio__item col-sm-4 col-md-3">
+                                        <a href="#" class="portfolio__link">
+                                            <img src="build/images/port-11.jpg" class="img-responsive" alt="Image 11">
+                                            <div class="portfolio__description">
+                                                <i class="portfolio__share-link fa fa-link"></i>
+                                                <i class="portfolio__share-link fa fa-search"></i>
+
+                                                <h3 class="portfolio__title">Creative design</h3>
+                                                <p class="portfolio__type">Web Design</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="portfolio__item col-sm-4 col-md-3">
+                                        <a href="#" class="portfolio__link">
+                                            <img src="build/images/port-12.jpg" class="img-responsive" alt="Image 12">
+                                            <div class="portfolio__description">
+                                                <i class="portfolio__share-link fa fa-link"></i>
+                                                <i class="portfolio__share-link fa fa-search"></i>
+
+                                                <h3 class="portfolio__title">Creative design</h3>
+                                                <p class="portfolio__type">Web Design</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="team" class="team">
+                    <div class="container">
+                        <div class="section__heading section__heading_team">
+                            <h2 class="section__title">Meet Our Team</h2>
+                            <div class="divider"><i class="divider__image"></i></div>
+                        </div>
+
+                        <div class="row">
+                            <ul class="team__list list clearfix">
+                                <li class="col-sm-6 col-md-3">
+                                    <div class="team__item">
+                                        <a href="#" class="team__member link">
+                                            <div class="team__image-container">
+                                                <img src="build/images/team-member-1.jpg" alt="Al Masum" class="img-responsive team__image">
+                                                <div class="team__image-hover">
+                                                    <div class="team__member-link">
+                                                        <i class="fa fa-plus fa-2x"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="team__info">
+                                                <span class="team__name">Al Masum</span>
+                                                <span class="team__title">Founder</span>
+                                            </div>
+                                        </a>
+                                        <div class="social">
+                                            <ul class="social__list list">
+                                                <li class="social__item social__item_bio">
+                                                    <a href="#" class="social__link social__link_facebook link">
+                                                        <i class="fa fa-facebook social__icon"></i>
+                                                    </a>
+                                                </li>
+                                                <li class="social__item social__item_bio">
+                                                    <a href="#" class="social__link social__link_twitter link">
+                                                        <i class="fa fa-twitter social__icon"></i>
+                                                    </a>
+                                                </li>
+                                                <li class="social__item social__item_bio">
+                                                    <a href="#" class="social__link social__link_skype link">
+                                                        <i class="fa fa-skype social__icon"></i>
+                                                    </a>
+                                                </li>
+                                                <li class="social__item social__item_bio">
+                                                    <a href="#" class="social__link social__link_vimeo link">
+                                                        <i class="fa fa-vimeo social__icon"></i>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="col-sm-6 col-md-3">
+                                    <div class="team__item">
+                                        <a href="#" class="team__member link">
+                                            <div class="team__image-container">
+                                                <img src="build/images/team-member-2.jpg" alt="Mis Liza" class="img-responsive team__image">
+
+                                                <div class="team__image-hover">
+                                                    <div class="team__member-link">
+                                                        <i class="fa fa-plus fa-2x"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="team__info">
+                                                <span class="team__name">Mis Liza</span>
+                                                <span class="team__title">UX Designer</span>
+                                            </div>
+                                        </a>
+                                        <div class="social">
+                                            <ul class="social__list list">
+                                                <li class="social__item social__item_bio">
+                                                    <a href="#" class="social__link social__link_facebook link">
+                                                        <i class="fa fa-facebook social__icon"></i>
+                                                    </a>
+                                                </li>
+                                                <li class="social__item social__item_bio">
+                                                    <a href="#" class="social__link social__link_twitter link">
+                                                        <i class="fa fa-twitter social__icon"></i>
+                                                    </a>
+                                                </li>
+                                                <li class="social__item social__item_bio">
+                                                    <a href="#" class="social__link social__link_skype link">
+                                                        <i class="fa fa-skype social__icon"></i>
+                                                    </a>
+                                                </li>
+                                                <li class="social__item social__item_bio">
+                                                    <a href="#" class="social__link social__link_vimeo link">
+                                                        <i class="fa fa-vimeo social__icon"></i>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
+
+                                <li class="col-sm-6 col-md-3">
+                                    <div class="team__item">
+                                        <a href="#" class="team__member link">
+                                            <div class="team__image-container">
+                                                <img src="build/images/team-member-3.jpg" alt="Hasan Mahmud" class="img-responsive team__image">
+
+                                                <div class="team__image-hover">
+                                                    <div class="team__member-link">
+                                                        <i class="fa fa-plus fa-2x"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="team__info">
+                                                <span class="team__name">Hasan Mahmud</span>
+                                                <span class="team__title">Web Designer</span>
+                                            </div>
+                                        </a>
+                                        <div class="social">
+                                            <ul class="social__list list">
+                                                <li class="social__item social__item_bio">
+                                                    <a href="#" class="social__link social__link_facebook link">
+                                                        <i class="fa fa-facebook social__icon"></i>
+                                                    </a>
+                                                </li>
+                                                <li class="social__item social__item_bio">
+                                                    <a href="#" class="social__link social__link_twitter link">
+                                                        <i class="fa fa-twitter social__icon"></i>
+                                                    </a>
+                                                </li>
+                                                <li class="social__item social__item_bio">
+                                                    <a href="#" class="social__link social__link_skype link">
+                                                        <i class="fa fa-skype social__icon"></i>
+                                                    </a>
+                                                </li>
+                                                <li class="social__item social__item_bio">
+                                                    <a href="#" class="social__link social__link_vimeo link">
+                                                        <i class="fa fa-vimeo social__icon"></i>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
+
+                                <li class="col-sm-6 col-md-3">
+                                    <div class="team__item">
+                                        <a href="#" class="team__member link">
+                                            <div class="team__image-container">
+                                                <img src="build/images/team-member-4.jpg" alt="Afifa Jannat" class="img-responsive team__image">
+
+                                                <div class="team__image-hover">
+                                                    <div class="team__member-link">
+                                                        <i class="fa fa-plus fa-2x"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="team__info">
+                                                <span class="team__name">Afifa Jannat</span>
+                                                <span class="team__title">Web Designer</span>
+                                            </div>
+                                        </a>
+                                        <div class="social">
+                                            <ul class="social__list list">
+                                                <li class="social__item social__item_bio">
+                                                    <a href="#" class="social__link social__link_facebook link">
+                                                        <i class="fa fa-facebook social__icon"></i>
+                                                    </a>
+                                                </li>
+                                                <li class="social__item social__item_bio">
+                                                    <a href="#" class="social__link social__link_twitter link">
+                                                        <i class="fa fa-twitter social__icon"></i>
+                                                    </a>
+                                                </li>
+                                                <li class="social__item social__item_bio">
+                                                    <a href="#" class="social__link social__link_skype link">
+                                                        <i class="fa fa-skype social__icon"></i>
+                                                    </a>
+                                                </li>
+                                                <li class="social__item social__item_bio">
+                                                    <a href="#" class="social__link social__link_vimeo link">
+                                                        <i class="fa fa-vimeo social__icon"></i>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul> 
+                        </div>
+                    </div>
+                </section>
+
+                <section id="testimonials" class="testimonials">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-sm-3 no-padding">
+                                <div class="testimonials__item">
+                                    <div class="testimonials__image">
+                                        <i class="fa fa-briefcase testimonials__icon"></i>
+                                    </div>
+                                    <h3 class="testimonials__title">4609</h3>
+                                    <p class="testimonials__info">Works</p>
+                                </div>
+                            </div>
+                            <div class="col-sm-3 no-padding">
+                                <div class="testimonials__item testimonials__item_reverse">
+                                    <div class="testimonials__image testimonials__image_reverse">
+                                        <i class="fa fa-user testimonials__icon"></i>
+                                    </div>
+                                    <h3 class="testimonials__title">3470</h3>
+                                    <p class="testimonials__info">Customers</p>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-3 no-padding">
+                                <div class="testimonials__item">
+                                    <div class="testimonials__image">
+                                        <i class="fa fa-shopping-cart testimonials__icon"></i>
+                                    </div>
+                                    <h3 class="testimonials__title">2908</h3>
+                                    <p class="testimonials__info">Purchase</p>
+                                </div>
+                            </div>
+                            <div class="col-sm-3 no-padding">
+                                <div class="testimonials__item testimonials__item_reverse">
+                                    <div class="testimonials__image testimonials__image_reverse">
+                                        <i class="fa fa-map-marker testimonials__icon"></i>
+                                    </div>
+                                    <h3 class="testimonials__title">1908</h3>
+                                    <p class="testimonials__info">Office</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="news" class="news">
+                    <div class="container">
+                        <div class="section__heading section__heading_news">
+                            <h2 class="section__title">Breaking News</h2>
+                            <div class="divider"><i class="divider__image"></i></div>
+                        </div>
+
+                        <ul class="news__list row clearfix">
+                            <li class="col-sm-6 col-md-4 col-lg-3 news__item">
+                                <a href="#" class="news__link">
+                                    <img src="build/images/news-image.jpg" alt="News 1" class="news__image img-responsive">
+                                    <h3 class="news__title">Amazing Image Post</h3>
+                                    <p class="news__date">12 Feb</p>
+                                </a>
+                            </li>
+                            <li class="col-sm-6 col-md-4 col-lg-3 news__item">
+                                <a href="#" class="news__link">
+                                    <img src="build/images/news-image.jpg" alt="News 2" class="news__image img-responsive">
+                                    <h3 class="news__title">Amazing Blog Post</h3>
+                                    <p class="news__date">12 Feb</p>
+                                </a>
+                            </li>
+                            <li class="col-sm-6 col-md-4 col-lg-3 news__item">
+                                <a href="#" class="news__link">
+                                    <img src="build/images/news-image.jpg" alt="News 2" class="news__image img-responsive">
+                                    <h3 class="news__title">Amazing Blog Post</h3>
+                                    <p class="news__date">12 Feb</p>
+                                </a>
+                            </li>
+                            <li class="col-sm-6 col-md-4 col-lg-3 news__item">
+                                <a href="#" class="news__link">
+                                    <img src="build/images/news-image.jpg" alt="News 2" class="news__image img-responsive">
+                                    <h3 class="news__title">Amazing Blog Post</h3>
+                                    <p class="news__date">12 Feb</p>
+                                </a>
+                            </li>
+                            <li class="col-sm-6 col-md-4 col-lg-3 news__item">
+                                <a href="#" class="news__link">
+                                    <img src="build/images/news-image.jpg" alt="News 2" class="news__image img-responsive">
+                                    <h3 class="news__title">Amazing Blog Post</h3>
+                                    <p class="news__date">12 Feb</p>
+                                </a>
+                            </li>
+                            <li class="col-sm-6 col-md-4 col-lg-3 news__item">
+                                <a href="#" class="news__link">
+                                    <img src="build/images/news-image.jpg" alt="News 2" class="news__image img-responsive">
+                                    <h3 class="news__title">Amazing Blog Post</h3>
+                                    <p class="news__date">12 Feb</p>
+                                </a>
+                            </li>
+                            <li class="col-sm-6 col-md-4 col-lg-3 news__item">
+                                <a href="#" class="news__link">
+                                    <img src="build/images/news-image.jpg" alt="News 2" class="news__image img-responsive">
+                                    <h3 class="news__title">Amazing Blog Post</h3>
+                                    <p class="news__date">12 Feb</p>
+                                </a>
+                            </li>
+                            <li class="col-sm-6 col-md-4 col-lg-3 news__item">
+                                <a href="#" class="news__link">
+                                    <img src="build/images/news-image.jpg" alt="News 2" class="news__image img-responsive">
+                                    <h3 class="news__title">Amazing Blog Post</h3>
+                                    <p class="news__date">12 Feb</p>
+                                </a>
+                            </li>
+                        </ul>
+
+                        <div class="news__btn-container">
+                            <button class="btn news__btn"><i class="fa fa-plus fa-lg news__btn-icon"></i> Load More</button>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="feedback" class="feedback">
+                    <div class="container">
+                        <div class="section__heading section__heading_feedback">
+                            <h2 class="section__title">Feedback</h2>
+                            <div class="divider"><i class="divider__image"></i></div>
+                        </div>
+                    </div>
+
+                    <div class="container-fluid">
+                        <div class="feedback__box">
+                            <div class="panel panel-default">
+                                <div class="panel-heading feedback__heading">
+                                    <h3 class="panel-title feedback__title">Message Title</h3>
+                                </div>
+                                <div class="panel-body feedback__message">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                                </div>
+                            </div>
+                            <div class="panel panel-default">
+                                <div class="panel-heading feedback__heading">
+                                    <h3 class="panel-title feedback__title">Some message</h3>
+                                </div>
+                                <div class="panel-body feedback__message">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Just text... 
+                                </div>
+                            </div>
+                            <div class="panel panel-default">
+                                <div class="panel-heading feedback__heading">
+                                    <h3 class="panel-title feedback__title">Message Title</h3>
+                                </div>
+                                <div class="panel-body feedback__message">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. And some more random text... 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="container">
+                        <form class="feedback__form clearfix" action="#">
+                            <div class="row">
+                                <div class="col-sm-push-1 col-sm-6">
+                                    <input type="text" class="feedback__input" placeholder="Title">
+                                    <textarea name="feedback" id="feedback-message" class="feedback__textarea" cols="30" rows="3" placeholder="Message"></textarea>
+                                </div>
+                                <div class="col-sm-push-1 col-sm-5">
+                                    <div class="feedback__controls">
+                                        <p class="feedback__action-text">Leave us a message</p>
+                                        <button type="submit" class="btn news__btn feedback__btn"><i class="fa fa-plus fa-lg news__btn-icon"></i>Add comment</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </section>
+
+                <section id="contacts" class="contacts">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-sm-6 contacts__image-container">
+                                <img src="build/images/company.jpg" alt="Company" class="contacts__image img-responsive">
+                            </div>
+
+                            <div class="col-sm-6 contacts__heading">
+                                <div class="section__heading section__heading_contacts">
+                                    <h2 class="section__title">Keep In Touch</h2>
+                                    <div class="divider"><i class="divider__image"></i></div>
+                                </div>
+
+                                <form action="#" class="contacts__form">
+                                    <div class="contacts__form-field">
+                                        <input type="text" name="fieldName" class="contacts__form-input" placeholder="Name">
+                                    </div>
+                                    <div class="contacts__form-field">
+                                        <input type="email" name="fieldEmail" class="contacts__form-input" placeholder="Email">
+                                    </div>
+                                    <div class="contacts__form-field contacts__form-field--textarea">
+                                        <textarea name="contacts" id="contacts-message" class="contacts__form-textarea" cols="30" rows="4" placeholder="Message"></textarea>
+                                    </div>
+
+                                    <div class="contacts__form-field">
+                                        <input type="submit" value="Send request" class="contacts__form-submit">
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </section>
             </div>
+
             <footer class="footer">
-                <p class="footer__text"><a href="#top" class="to-top" scroll-to="top"><i class="to-top__icon"></i></a> &copy; 2014 - <a href="#" class="footer__link">Kat</a> All Right Reserved</p>
+                <p class="footer__text">Copyright 2015 <a href="#" class="footer__link">theHam</a> | All Rights Reserved <a href="#top" class="to-top"><i class="fa fa-angle-up to-top__icon"></i></a></p>
             </footer>
         </div>
+
+        <!-- <script src="build/js/vendor.js"></script> -->
+        <script src="build/js/app.js"></script>
 	</body>
 </html>
