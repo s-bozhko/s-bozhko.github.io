@@ -5,14 +5,14 @@ var path = require('path');
 var fs = require('fs');
 var entry = {};
 
-var files = fs.readdirSync(path.resolve('./src/scripts/'));
+// var files = fs.readdirSync(path.resolve('./src/scripts/'));
 
-var filepath = './src/scripts/';
+// var filepath = './src/scripts/';
 
-files.forEach(function (filename) {
-    filename = filename.slice(0, -3); //remove .js
-    entry[filename] = filepath + filename
-});
+// files.forEach(function (filename) {
+//     filename = filename.slice(0, -4); //remove .js
+//     entry[filename] = filepath + filename
+// });
 
 module.exports = [
 {
@@ -48,7 +48,7 @@ module.exports = [
 },
 {
     name: 'js',
-    entry: entry,
+    entry: './src/scripts/app.js',
     output: {
         path: 'build/js',
         filename: "[name].js",
@@ -60,7 +60,7 @@ module.exports = [
         loaders: [
             //{ test: /\.js$/, loader: "react-hot-loader|babel", exclude: [/node_modules/] },
             {
-                test: /\.js$/,
+                test: /\.jsx?$/,
                 exclude: /node_modules/,
                 loader: 'babel-loader',
                 query: {

@@ -8,6 +8,8 @@
 	background: url('../images/bg.jpg') center center no-repeat;
 	background-size: cover;
 
+	position: relative;
+
 	@media (min-width: $break_sm) {
 		height: 892px;
 		padding: 228px 0;

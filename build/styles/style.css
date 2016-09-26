@@ -6485,7 +6485,8 @@ body {
   width: 100%;
   padding: 60px 0;
   background: url(../images/bg.jpg) center center no-repeat;
-  background-size: cover; }
+  background-size: cover;
+  position: relative; }
   @media (min-width: 768px) {
     .intro {
       height: 892px;
@@ -6583,6 +6584,9 @@ body {
       .slider__controls-direction {
         max-width: 72%; } }
   .slider__control {
+    position: absolute;
+    top: 52%;
+    z-index: 100;
     display: inline-block;
     width: 63px;
     height: 63px;
@@ -6594,9 +6598,10 @@ body {
     transition: all 0.3s; }
     .slider__control:hover, .slider__control:active {
       background-color: #18cfab;
-      color: #fff; }
+      color: #fff;
+      cursor: pointer; }
     .slider__control-next {
-      float: right; }
+      right: 0; }
 
 .highlight {
   color: #18cfab; }

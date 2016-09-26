@@ -8,6 +8,10 @@
 
         <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
         <link rel="stylesheet" href="build/styles/font-awesome.css">
+
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css" />
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css" />
+
         <link rel="stylesheet" href="build/styles/style.css">
 
         <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script> -->
@@ -35,78 +39,43 @@
                                     <span class="icon-bar"></span> 
                                     <span class="icon-bar"></span> 
                                 </button>
-                            </div> 
-                            <nav class="navbar-collapse header__navigation clearfix collapse" id="bs-navbar"> 
-                                <ul class="nav navbar-nav navigation list"> 
-                                    <li class="navigation__item"><a href="#" class="navigation__link link navigation__link_active">Home</a></li>
-                                    <li class="navigation__item"><a href="#about" class="navigation__link link">About</a></li>
-                                    <li class="navigation__item"><a href="#service" class="navigation__link link">Service</a></li>
-                                    <li class="navigation__item"><a href="#work" class="navigation__link link">Work</a></li>
-                                    <li class="navigation__item"><a href="#testimonial" class="navigation__link link">Testimonial</a></li>
-                                    <li class="navigation__item"><a href="#blog" class="navigation__link link">Blog</a></li>
-                                    <li class="navigation__item"><a href="#team" class="navigation__link link">Team</a></li>
-                                    <li class="navigation__item"><a href="#contact" class="navigation__link link">Contact</a></li>
-                                </ul>
-                            </nav> 
+                            </div>
+
+                            <div id="menu"></div>
                         </div>
                     </div>
                 </header>
 
-                <section class="intro">
-                    <div class="intro__slider slider">
-                        <div class="container">
-                            <div class="slider__wrapper">
-                                <div class="slider__viewport">
-                                    <ul class="slider__slider-list list clearfix">
-                                        <li class="slider__item clearfix">
-                                            <p class="slider__subtitle">The Ham is <span class="highlight">a PSD template</span></p>
-                                            <h1 class="slider__title">We are creative</h1>
-                                            <p class="slider__description">Nam varius accumsan elementum aliquam</p>
+                <section id="intro">
+                    
+                    <div id="slider"></div>
 
-                                            <div class="slider__btn-container">
-                                                <a href="#" class="slider__btn">Explore now</a>
-                                                <a href="#" class="slider__btn slider__btn_blue">Purchase now</a>
-                                            </div>
-                                        </li>
-                                    </ul>
+                    <div class="about">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-sm-3 no-padding">
+                                    <div class="about__item">
+                                        <i class="about__icon about__icon_touch"></i>
+                                        <h3 class="about__title">Personalized options</h3> 
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
-
-                        <div class="slider__controls">
-                            <div class="slider__controls-direction">
-                                <a class="slider__control slider__control-prev" href="#"><i class="fa fa-angle-left"></i></a>
-                                <a class="slider__control slider__control-next" href="#"><i class="fa fa-angle-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <section id="about" class="about">
-                    <div class="container-fluid">
-                        <div class="row">
-                            <div class="col-sm-3 no-padding">
-                                <div class="about__item">
-                                    <i class="about__icon about__icon_touch"></i>
-                                    <h3 class="about__title">Personalized options</h3> 
+                                <div class="col-sm-3 no-padding">
+                                    <div class="about__item about__item_reverse">
+                                        <i class="about__icon about__icon_diamond"></i>
+                                        <h3 class="about__title">Fully customizable</h3> 
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="col-sm-3 no-padding">
-                                <div class="about__item about__item_reverse">
-                                    <i class="about__icon about__icon_diamond"></i>
-                                    <h3 class="about__title">Fully customizable</h3> 
+                                <div class="col-sm-3 no-padding">
+                                    <div class="about__item">
+                                        <i class="about__icon about__icon_lamp"></i>
+                                        <h3 class="about__title">Unlimited support</h3> 
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="col-sm-3 no-padding">
-                                <div class="about__item">
-                                    <i class="about__icon about__icon_lamp"></i>
-                                    <h3 class="about__title">Unlimited support</h3> 
-                                </div>
-                            </div>
-                            <div class="col-sm-3 no-padding">
-                                <div class="about__item about__item_reverse">
-                                    <i class="about__icon about__icon_devices"></i>
-                                    <h3 class="about__title">Responsive all device</h3> 
+                                <div class="col-sm-3 no-padding">
+                                    <div class="about__item about__item_reverse">
+                                        <i class="about__icon about__icon_devices"></i>
+                                        <h3 class="about__title">Responsive all device</h3> 
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -789,6 +758,6 @@
         </div>
 
         <!-- <script src="build/js/vendor.js"></script> -->
-        <script src="build/js/app.js"></script>
+        <script src="build/js/main.js"></script>
 	</body>
 </html>
